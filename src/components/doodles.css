@@ -1,0 +1,189 @@
+/* ==========================================================================
+   Landing-page doodle & decoration utilities ("lp-" = landing page)
+   Shared by Hero, About, FeaturedInitiative, Impact and StatsBand so the
+   home page picks up the same hand-drawn feel as the About Us page.
+   New, additively-named classes only — nothing here overrides existing
+   section styles in index.css.
+   ========================================================================== */
+
+.lp-doodle {
+  display: block;
+  pointer-events: none;
+  overflow: visible;
+}
+.lp-doodle--stretch path {
+  vector-effect: non-scaling-stroke;
+}
+.lp-abs {
+  position: absolute;
+  z-index: 2;
+}
+.lp-relative {
+  position: relative;
+}
+
+.lp-c-o {
+  color: var(--orange, #ff741f);
+}
+.lp-c-sun {
+  color: #ffb627;
+}
+.lp-c-mint {
+  color: #4fb99a;
+}
+.lp-c-ink {
+  color: var(--ink, #0b2233);
+}
+.lp-c-line {
+  color: #f0d9c2;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-float {
+    animation: lp-bob 6s ease-in-out infinite;
+  }
+  .lp-spin {
+    animation: lp-spin 28s linear infinite;
+  }
+}
+@keyframes lp-bob {
+  50% {
+    transform: translateY(-8px) rotate(6deg);
+  }
+}
+@keyframes lp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide the larger corner doodles on small screens so they never sit on top
+   of text once things stack to one column. */
+@media (max-width: 720px) {
+  .lp-edge {
+    display: none;
+  }
+}
+
+/* ---- underline squiggle under emphasised hero text ---- */
+.lp-underline {
+  position: relative;
+  display: inline-block;
+}
+.lp-underline .lp-doodle {
+  position: absolute;
+  left: 0;
+  bottom: -0.14em;
+  width: 100%;
+  height: 0.24em;
+  color: #ffb627;
+}
+
+/* ---- taped photo (About section) ---- */
+.lp-taped {
+  position: relative;
+  transform: rotate(-2deg);
+  transition: transform 0.25s ease;
+}
+.lp-taped:hover {
+  transform: rotate(0deg);
+}
+.lp-taped img {
+  border: 9px solid #fff !important;
+  border-radius: 6px !important;
+  box-shadow: 0 20px 34px -18px rgba(5, 36, 54, 0.45),
+    0 2px 6px rgba(5, 36, 54, 0.16) !important;
+}
+.lp-taped::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 92px;
+  height: 28px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(255, 182, 39, 0.78);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  z-index: 3;
+}
+
+/* ---- framed video (Impact section) ---- */
+.lp-framed {
+  position: relative;
+}
+.lp-framed .impact__video-media {
+  display: block;
+  width: 100%;
+  border: 8px solid #fff;
+  border-radius: 22px;
+  box-shadow: 0 26px 44px -24px rgba(5, 36, 54, 0.5),
+    4px 6px 0 var(--orange, #ff741f);
+  transform: rotate(-1.1deg);
+}
+.lp-tag {
+  position: absolute;
+  left: 20px;
+  bottom: -16px;
+  z-index: 3;
+  padding: 6px 18px 8px;
+  background: #ffb627;
+  border: 2px solid var(--ink, #0b2233);
+  border-radius: 7px;
+  font-family: var(--font-script, "Caveat", cursive);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink, #0b2233);
+  transform: rotate(-2.5deg);
+  box-shadow: 3px 4px 0 var(--ink, #0b2233);
+}
+
+/* ---- "coming soon" sticker (Featured Initiative) ---- */
+.lp-soon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  display: grid;
+  place-content: center;
+  width: 96px;
+  height: 96px;
+  border: 2px solid var(--ink, #0b2233);
+  border-radius: 50%;
+  background: #ffb627;
+  box-shadow: 4px 5px 0 var(--ink, #0b2233);
+  transform: rotate(8deg);
+  text-align: center;
+  font-family: var(--font-display, "Newsreader", serif);
+  font-weight: 600;
+  color: var(--ink, #0b2233);
+  line-height: 1.15;
+}
+.lp-soon span {
+  display: block;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+.lp-soon span:first-child {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-family: var(--font-body, sans-serif);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 640px) {
+  .lp-soon {
+    width: 78px;
+    height: 78px;
+    top: 10px;
+    right: 10px;
+  }
+  .lp-soon span {
+    font-size: 0.85rem;
+  }
+  .lp-soon span:first-child {
+    font-size: 0.62rem;
+  }
+}
