@@ -7,7 +7,7 @@ import Home from "./pages/home.jsx";
 import OurWork from "./pages/our-work.jsx";
 import About from "./pages/about.jsx";
 import Layout from "./components/Layout.jsx";
-import ChristmasOnTheStreets from "./pages/ChristmasInTheStreet.jsx";
+import ChristmasOnTheStreets from "./pages/christmasInTheStreet.jsx";
 
 export default function App() {
   return (
