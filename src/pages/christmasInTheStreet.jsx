@@ -437,7 +437,7 @@ function EditionFour() {
    PAGE
    ========================================================================== */
 
-export default function ChristmasOnTheStreets() {
+export default function ChristmasInTheStreet() {
   useEffect(() => {
     document.title = "Christmas in the Street | Sanusi Jafar Foundation";
   }, []);

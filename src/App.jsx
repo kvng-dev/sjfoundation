@@ -8,7 +8,7 @@ import About from "./pages/about.jsx";
 import Layout from "./components/Layout.jsx";
 import Donate from "./pages/donate.jsx";
 import Project1000Ssmiles from "./pages/project-1000-smiles.jsx";
-import ChristmasOnTheStreets from "./pages/ChristmasInTheStreet.jsx";
+import ChristmasInTheStreet from "./pages/ChristmasInTheStreet.jsx";
 
 export default function App() {
   return (
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/impact" element={<ImpactPage />} />
           <Route
             path="/christmas-in-the-street"
-            element={<ChristmasOnTheStreets />}
+            element={<ChristmasInTheStreet />}
           />
           <Route path="/get-involved" element={<GetInvolvedPage />} />
           <Route path="/contact" element={<Contact />} />
