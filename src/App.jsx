@@ -8,7 +8,7 @@ import About from "./pages/about.jsx";
 import Layout from "./components/Layout.jsx";
 import Donate from "./pages/donate.jsx";
 import Project1000Ssmiles from "./pages/project-1000-smiles.jsx";
-import ChristmasInTheStreet from "./pages/ChristmasInTheStreet.jsx";
+import ChristmasInTheStreet from "./pages/christmasInTheStreet.jsx";
 
 export default function App() {
   return (
