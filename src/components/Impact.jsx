@@ -22,7 +22,7 @@ export default function Impact() {
           <Doodle
             name="sun"
             className="lp-abs lp-spin lp-c-sun lp-edge"
-            style={{ top: -30, right: 16, width: 58 }}
+            style={{ top: -10, right: 16, width: 58 }}
           />
           <video
             className="impact__video-media"
@@ -34,7 +34,12 @@ export default function Impact() {
             preload="metadata"
             aria-label="Sanusi Jafar Foundation making an impact in the community"
           />
-          <span className="lp-tag">See the impact in motion</span>
+          <span
+            style={{ bottom: 10, right: 16, width: "fit-content" }}
+            className="lp-tag"
+          >
+            See the impact in motion
+          </span>
         </div>
       </div>
     </section>

@@ -30,23 +30,23 @@ import runalpha from "../assets/logos/runalpha.png";
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Christmas in the Streets", href: "/christmas-in-the-streets" },
+  { label: "Christmas in the Street", href: "/christmas-in-the-street" },
   { label: "Project 1,000 Smiles", href: "/project-1000-smiles" },
   { label: "Impact", href: "/impact" },
   { label: "Get Involved", href: "/get-involved" },
 ];
 
 export const heroStats = [
-  { value: "1,200+", label: "Children Reached" },
-  { value: "250+", label: "Women Reached" },
-  { value: "10,000", label: "Smiles We're Building Towards" },
+  { value: "1,354+", label: "Children Reached" },
+  { value: "273+", label: "Women Reached" },
+  { value: "1,000", label: "Smiles We're Building Towards" },
   { value: "1", label: "Community at a Time" },
 ];
 
 export const impactStats = [
-  { value: "1.2k+", label: "Children Reached", icon: LuBaby },
-  { value: "184+", label: "Women Reached", icon: LuFlower2 },
-  { value: "10,000", label: "Smiles We're Building Towards", icon: LuSparkles },
+  { value: "1,354+", label: "Children Reached", icon: LuBaby },
+  { value: "273+", label: "Women Reached", icon: LuFlower2 },
+  { value: "1,000", label: "Smiles We're Building Towards", icon: LuSparkles },
   { value: "1", label: "Community at a Time", icon: LuMapPin },
 ];
 
@@ -159,12 +159,12 @@ export const partners = [
 ];
 
 export const footerLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Christmas on the Street", href: "#focus" },
-  { label: "Project 1,000 Smiles", href: "#project" },
-  { label: "Impact", href: "#impact" },
-  { label: "Get Involved", href: "#get-involved" },
-  { label: "Contact", href: "#contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Christmas in the Street", href: "/christmas-in-the-street" },
+  { label: "Project 1,000 Smiles", href: "/project-1000-smiles" },
+  { label: "Impact", href: "/impact" },
+  { label: "Get Involved", href: "/get-involved" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const contact = {

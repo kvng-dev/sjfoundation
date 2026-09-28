@@ -7,6 +7,7 @@ import Impact from "../components/Impact.jsx";
 import GetInvolved from "../components/GetInvolved.jsx";
 import Partners from "../components/Partners.jsx";
 import BeneficiaryStory from "../components/Stories.jsx";
+import ChristmasFeature from "../components/ChristmasFeature.jsx";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <StatsBand />
       <About />
+      <ChristmasFeature />
       <FeaturedInitiative />
       <Impact />
       <GetInvolved />

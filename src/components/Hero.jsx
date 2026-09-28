@@ -61,7 +61,7 @@ export default function Hero() {
         src={healTheWorld}
         loop
         preload="auto"
-        autoPlay={true}
+        // autoPlay={true}
       />
       <div className="hero__media">
         {heroImages.map((image, index) => (

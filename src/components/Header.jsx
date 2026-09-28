@@ -49,7 +49,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <Link to="/contact" className="btn btn--primary btn--sm header__donate">
+        <Link to="/donate" className="btn btn--primary btn--sm header__donate">
           <LuHeart aria-hidden="true" />
           Donate
         </Link>

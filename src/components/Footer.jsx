@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__cta">
-          <a href="#donate" className="btn btn--primary">
+          <a href="/donate" className="btn btn--primary">
             <LuHeart aria-hidden="true" /> Donate
           </a>
           <p>Because kindness changes lives.</p>

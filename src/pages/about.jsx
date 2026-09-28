@@ -46,8 +46,9 @@ import collage3 from "../assets/IMG_3283.JPG.jpeg";
 // While this is null, an illustrated placeholder is shown.
 const FOUNDER_IMG = founderImg || null;
 const FOUNDER = {
-  name: "Our Founder",
-  alt: "The founder of the Sanusi Jafar Foundation",
+  role: "Our Founder",
+  name: "Sanusi Jafar",
+  alt: "Sanusi Jafar, founder of the Sanusi Jafar Foundation",
 };
 
 // Every photo on the page, in one place. All are placeholders taken from the
@@ -487,7 +488,17 @@ function Story() {
         <Reveal className="ab-story__aside">
           <div className="ab-founder">
             <Doodle name="hat" className="ab-abs ab-c-o ab-founder__hat" />
-            <Polaroid caption={FOUNDER.name} tilt={-3} ratio="4 / 5" tape="sun">
+            <Polaroid
+              caption={
+                <>
+                  <span className="ab-founder__role">{FOUNDER.role}</span>
+                  <span className="ab-founder__name">{FOUNDER.name}</span>
+                </>
+              }
+              tilt={-3}
+              ratio="4 / 5"
+              tape="sun"
+            >
               {FOUNDER_IMG ? (
                 <img src={FOUNDER_IMG} alt={FOUNDER.alt} />
               ) : (
@@ -1450,6 +1461,8 @@ const CSS = `
 .ab-story__grid { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
 .ab-story__aside { position: sticky; top: 110px; }
 .ab-founder { position: relative; max-width: 380px; }
+.ab-founder__role { display: block; font-family: var(--ab-script); font-size: 1.35rem; font-weight: 600; line-height: 1.2; color: var(--ab-oi); }
+.ab-founder__name { display: block; font-family: var(--ab-script); font-size: 1.75rem; font-weight: 700; line-height: 1.2; color: var(--ab-ink); }
 .ab-founder__hat { top: -44px; right: -12px; width: 92px; transform: rotate(14deg); z-index: 4; }
 .ab-founder__ph { display: block; }
 .ab-story__lead { font-family: var(--ab-serif); font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-style: italic; line-height: 1.3; color: var(--ab-ink); margin-bottom: 34px !important; max-width: 30rem; }

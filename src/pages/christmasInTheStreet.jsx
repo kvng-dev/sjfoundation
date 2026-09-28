@@ -35,6 +35,8 @@ import edition2Photo from "../assets/IMG_3169.JPG.jpeg";
 import edition3Photo from "../assets/IMG_3167.JPG.jpeg";
 import streetPhoto from "../assets/IMG-20260923-WA0067.jpg";
 import mosquePhoto from "../assets/IMG-20251230-WA0012.jpg";
+import CountdownSection from "../components/CountdownSection.jsx";
+import GallerySection from "../components/GallerySection.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT
@@ -171,7 +173,7 @@ function Hero() {
         <div>
           <p className="cs-eyebrow">Our flagship initiative</p>
           <h1 id="cs-hero-title" className="cs-h1">
-            Christmas in the Streets
+            Christmas in the Street
           </h1>
           <p className="cs-lead">
             Every last Saturday of December, we close the year the way we think
@@ -199,7 +201,7 @@ function Hero() {
           />
           <img
             src={heroPhoto}
-            alt="Children at a past Christmas on the Streets celebration"
+            alt="Children at a past Christmas in the Street celebration"
             loading="lazy"
           />
         </div>
@@ -437,7 +439,7 @@ function EditionFour() {
 
 export default function ChristmasOnTheStreets() {
   useEffect(() => {
-    document.title = "Christmas on the Streets | Sanusi Jafar Foundation";
+    document.title = "Christmas in the Street | Sanusi Jafar Foundation";
   }, []);
 
   return (
@@ -446,8 +448,10 @@ export default function ChristmasOnTheStreets() {
       <Hero />
       <WhatItIs />
       <GrowthChart />
+      <GallerySection />
       <HonestMoment />
       <BeyondTheParty />
+      <CountdownSection />
       <EditionFour />
     </div>
   );
