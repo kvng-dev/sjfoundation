@@ -173,7 +173,7 @@ function Teasers() {
             </span>
           </div>
           <div className="ow-teaser__body">
-            <h2>Christmas on the Streets</h2>
+            <h2>Christmas in the Street</h2>
             <p>
               A party for children, health checks for the adults who bring them,
               and foodstuffs for widows and market women &mdash; every last
