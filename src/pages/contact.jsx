@@ -29,28 +29,31 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaTiktok,
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
 import { Doodle } from "../components/Doodles.jsx";
+import { contact } from "../data/content.js";
 
 /* ==========================================================================
    EDITABLE CONTENT — same details already used in your Footer
    ========================================================================== */
 
-const CONTACT = {
-  phone: "+234 803 613 0629",
-  phoneHref: "tel:+2348036130629",
-  email: "sanusijafarfoundation@gmail.com",
-  location: "Lagos, Nigeria",
-};
-
 // Placeholders — same "#" state as your Footer. Swap in real profile URLs.
 const SOCIALS = [
-  { label: "Instagram", href: "#", icon: FaInstagram },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/sanusijafarfoundation?stkn=MXdzY2s2anQ0MDMzNw%3D%3D&utm_source=qr",
+    icon: FaInstagram,
+  },
   { label: "LinkedIn", href: "#", icon: FaLinkedinIn },
   { label: "Facebook", href: "#", icon: FaFacebookF },
-  { label: "X", href: "#", icon: FaXTwitter },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@sanusijafarfoundation?_r=1&_t=ZS-9A05NRww5c9",
+    icon: FaTiktok,
+  },
   { label: "YouTube", href: "#", icon: FaYoutube },
 ];
 
@@ -171,21 +174,21 @@ function ContactDetails() {
               <LuPhone aria-hidden="true" />
             </span>
             <h2>Phone</h2>
-            <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+            <a href={contact.phoneHref}>{contact.phone}</a>
           </Reveal>
           <Reveal as="li" delay={80} className="ct-details__card">
             <span className="ct-details__icon">
               <LuMail aria-hidden="true" />
             </span>
             <h2>Email</h2>
-            <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </Reveal>
           <Reveal as="li" delay={160} className="ct-details__card">
             <span className="ct-details__icon">
               <LuMapPin aria-hidden="true" />
             </span>
             <h2>Location</h2>
-            <span>{CONTACT.location}</span>
+            <span>{contact.location}</span>
           </Reveal>
         </ul>
 

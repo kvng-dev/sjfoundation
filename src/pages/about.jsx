@@ -47,7 +47,7 @@ import collage3 from "../assets/IMG_3283.JPG.jpeg";
 const FOUNDER_IMG = founderImg || null;
 const FOUNDER = {
   role: "Our Founder",
-  name: "Sanusi Jafar",
+  name: "Olatunji Sanusi",
   alt: "Sanusi Jafar, founder of the Sanusi Jafar Foundation",
 };
 

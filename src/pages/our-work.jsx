@@ -69,9 +69,7 @@ const LINKS = {
   volunteer: "/get-involved#volunteer",
   partner: "/get-involved#partner",
   donate: "/get-involved#donate",
-  smilesMailto:
-    "mailto:sanusijafarfoundation@gmail.com?subject=" +
-    encodeURIComponent("Keep me posted on Project 1,000 Smiles"),
+  project: "/project-1000-smiles",
 };
 
 /* ==========================================================================
@@ -182,7 +180,7 @@ function Teasers() {
               Saturday of December, three editions and counting.
             </p>
             <Link to={LINKS.christmas} className="ow-textlink">
-              Explore Christmas on the Streets{" "}
+              Explore Christmas in the Street{" "}
               <LuArrowRight aria-hidden="true" />
             </Link>
           </div>
@@ -207,8 +205,8 @@ function Teasers() {
               children, mothers and communities in the months between one
               December and the next.
             </p>
-            <a href={LINKS.smilesMailto} className="ow-textlink">
-              Get Notified <LuArrowRight aria-hidden="true" />
+            <a href={LINKS.project} className="ow-textlink">
+              Explore Project 1,000 smiles <LuArrowRight aria-hidden="true" />
             </a>
           </div>
         </Reveal>

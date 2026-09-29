@@ -40,7 +40,7 @@ export default function Header() {
           </ul>
 
           <Link
-            to="/contact"
+            to="/donate"
             className="btn btn--primary btn--sm nav__donate-mobile"
             onClick={close}
           >

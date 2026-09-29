@@ -83,7 +83,7 @@ const PILLARS = [
     tone: "sky",
   },
   {
-    title: "Foodstuffs For Widows",
+    title: "Foodstuffs For Women",
     text: "Raw foodstuffs handed directly to widows and market women in the community, starting with rice, growing every year since.",
     icon: LuHandHeart,
     tone: "mint",

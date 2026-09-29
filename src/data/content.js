@@ -8,6 +8,7 @@ import {
   LuHandshake,
   LuUsers,
   LuHeart,
+  LuLinkedin,
 } from "react-icons/lu";
 
 import story1 from "../assets/IMG_3209.JPG.jpeg";
@@ -24,16 +25,17 @@ import metroLogo from "../assets/logos/metro.jpeg";
 import ravenshrLogo from "../assets/logos/ravenshr.jpeg";
 import hobLogo from "../assets/logos/hob.jpeg";
 import runalpha from "../assets/logos/runalpha.png";
+import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 // Nav links point at sections on the landing page for now.
 // Swap each href for a real route (e.g. "/about") once those pages exist.
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Christmas in the Street", href: "/christmas-in-the-street" },
-  { label: "Project 1,000 Smiles", href: "/project-1000-smiles" },
+  { label: "Our Work", href: "/our-work" },
   { label: "Impact", href: "/impact" },
   { label: "Get Involved", href: "/get-involved" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const heroStats = [
@@ -160,8 +162,7 @@ export const partners = [
 
 export const footerLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Christmas in the Street", href: "/christmas-in-the-street" },
-  { label: "Project 1,000 Smiles", href: "/project-1000-smiles" },
+  { label: "Our Work", href: "/our-work" },
   { label: "Impact", href: "/impact" },
   { label: "Get Involved", href: "/get-involved" },
   { label: "Contact", href: "/contact" },
@@ -180,12 +181,14 @@ export const socials = [
     label: "Instagram",
     href: "https://www.instagram.com/sanusijafarfoundation?stkn=MXdzY2s2anQ0MDMzNw%3D%3D&utm_source=qr",
     key: "instagram",
+    icon: FaInstagram,
   },
-  { label: "LinkedIn", href: "#", key: "linkedin" },
+  { label: "LinkedIn", href: "#", key: "linkedin", icon: LuLinkedin },
   { label: "Facebook", href: "#", key: "facebook" },
   {
     label: "Tiktok",
     href: "https://www.tiktok.com/@sanusijafarfoundation?_r=1&_t=ZS-9A05NRww5c9",
     key: "tiktok",
+    icon: FaTiktok,
   },
 ];

@@ -63,10 +63,10 @@ export default function ChristmasFeature() {
             3 editions. 1,354+ children reached. And counting.
           </p>
           <p className="cf-text">
-            Every last Saturday of December, we throw a party for children, run
-            health checks for the adults who bring them, and hand out foodstuffs
-            to widows and market women in the community. Edition 4 is this
-            December 19.
+            Every second Saturday of December, we throw a party for children,
+            run health checks for the adults who bring them, and hand out
+            foodstuffs to widows and market women in the community. Edition 4 is
+            this December 19.
           </p>
           <Link to={LINK} className="cf-btn">
             Explore Christmas On The Streets <LuArrowRight aria-hidden="true" />

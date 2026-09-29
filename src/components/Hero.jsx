@@ -113,8 +113,6 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__copy">
-          <p className="eyebrow">Sanusi Jafar Foundation</p>
-
           <h1 id="hero-title" className="hero__title">
             Bringing hope, joy &amp; smiles to children, mothers &amp;
             communities,{" "}
