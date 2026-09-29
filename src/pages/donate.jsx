@@ -40,8 +40,8 @@ const CONTACT_EMAIL = "sanusijafarfoundation@gmail.com";
 // if a field isn't ready yet; never publish a guessed account number.
 const BANK_DETAILS = {
   accountName: "Sanusi Jafar Foundation",
-  accountNumber: "[Add account number]",
-  bankName: "[Add bank name]",
+  accountNumber: "1309460485",
+  bankName: "Providus Bank",
 };
 
 // Set this once you have a real payment link (Paystack/Flutterwave/etc.).
@@ -206,37 +206,37 @@ function Hero() {
   );
 }
 
-function ImpactStrip() {
-  return (
-    <section className="dn-strip" aria-label="Impact so far">
-      <div className="dn-wrap">
-        <dl className="dn-strip__grid">
-          {IMPACT_STRIP.map((s, i) => (
-            <Reveal
-              as="div"
-              key={s.label}
-              delay={i * 80}
-              className="dn-strip__item"
-            >
-              <dt className="dn-sr">{s.label}</dt>
-              <dd className="dn-strip__value">
-                <CountUp
-                  end={s.value}
-                  duration={2.2}
-                  separator=","
-                  enableScrollSpy
-                  scrollSpyOnce
-                />
-                {s.suffix}
-              </dd>
-              <dd className="dn-strip__label">{s.label}</dd>
-            </Reveal>
-          ))}
-        </dl>
-      </div>
-    </section>
-  );
-}
+// function ImpactStrip() {
+//   return (
+//     <section className="dn-strip" aria-label="Impact so far">
+//       <div className="dn-wrap">
+//         <dl className="dn-strip__grid">
+//           {IMPACT_STRIP.map((s, i) => (
+//             <Reveal
+//               as="div"
+//               key={s.label}
+//               delay={i * 80}
+//               className="dn-strip__item"
+//             >
+//               <dt className="dn-sr">{s.label}</dt>
+//               <dd className="dn-strip__value">
+//                 <CountUp
+//                   end={s.value}
+//                   duration={2.2}
+//                   separator=","
+//                   enableScrollSpy
+//                   scrollSpyOnce
+//                 />
+//                 {s.suffix}
+//               </dd>
+//               <dd className="dn-strip__label">{s.label}</dd>
+//             </Reveal>
+//           ))}
+//         </dl>
+//       </div>
+//     </section>
+//   );
+// }
 
 function WaysToGive() {
   return (
@@ -381,9 +381,9 @@ export default function Donate() {
     <div className="dn-page">
       <style>{CSS}</style>
       <Hero />
-      <ImpactStrip />
-      <WaysToGive />
       <HowToGive />
+      {/* <ImpactStrip /> */}
+      <WaysToGive />
       <ClosingNote />
     </div>
   );

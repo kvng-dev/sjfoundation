@@ -68,7 +68,7 @@ export default function ChristmasFeature() {
             market women in the community. Edition 4 is this December 19.
           </p>
           <Link to={LINK} className="cf-btn">
-            Explore Christmas On The Streets <LuArrowRight aria-hidden="true" />
+            Explore Christmas In The Street <LuArrowRight aria-hidden="true" />
           </Link>
         </div>
       </div>
