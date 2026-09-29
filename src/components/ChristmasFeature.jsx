@@ -57,16 +57,15 @@ export default function ChristmasFeature() {
         <div className="cf-content">
           <p className="cf-eyebrow">Our flagship initiative</p>
           <h2 id="cf-title" className="cf-title">
-            Christmas on the Streets
+            Christmas in the Street
           </h2>
           <p className="cf-sub">
             3 editions. 1,354+ children reached. And counting.
           </p>
           <p className="cf-text">
-            Every second Saturday of December, we throw a party for children,
-            run health checks for the adults who bring them, and hand out
-            foodstuffs to widows and market women in the community. Edition 4 is
-            this December 19.
+            Every December, we throw a party for children, run health checks for
+            the adults who bring them, and hand out foodstuffs to widows and
+            market women in the community. Edition 4 is this December 19.
           </p>
           <Link to={LINK} className="cf-btn">
             Explore Christmas On The Streets <LuArrowRight aria-hidden="true" />
