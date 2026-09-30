@@ -65,7 +65,7 @@ const FOCUS = [
 ];
 
 const LINKS = {
-  christmas: "/christmas-in-the-streets",
+  christmas: "/christmas-in-the-street",
   volunteer: "/get-involved#volunteer",
   partner: "/get-involved#partner",
   donate: "/get-involved#donate",

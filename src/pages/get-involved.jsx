@@ -72,7 +72,7 @@ const GIVE_WAYS = [
     icon: LuHeart,
   },
   {
-    title: "Foodstuffs for a widow",
+    title: "Foodstuffs for women",
     text: "Last edition, 183 mothers, market women and widows went home with foodstuffs. Help us grow that number.",
     icon: LuPackage,
   },

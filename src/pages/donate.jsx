@@ -488,7 +488,6 @@ function ConfirmDonation() {
                     {w.title}
                   </option>
                 ))}
-                <option value="Not sure / general">Not sure / general</option>
               </select>
             </div>
 
