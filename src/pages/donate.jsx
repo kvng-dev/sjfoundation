@@ -11,6 +11,13 @@
 // Nothing here invents real financial details — every placeholder is
 // obviously bracketed so it can't be mistaken for real information.
 //
+// "Let us know you gave" form: since a bank transfer alone doesn't tell you
+// who sent it, this opens the visitor's email client with the details
+// pre-filled (name optional / anonymous, amount, date, cause, message) so
+// they land in your inbox instead of nowhere. It does not claim to have
+// "recorded" or "confirmed" anything on its own — it's a handoff to email,
+// same as the other no-backend actions on this page.
+//
 // Reuses the shared <Doodle> component + doodles.css. Place at:
 // src/pages/Donate.jsx
 // ---------------------------------------------------------------------------
@@ -346,6 +353,193 @@ function HowToGive() {
   );
 }
 
+function ConfirmDonation() {
+  const [form, setForm] = useState({
+    name: "",
+    anonymous: false,
+    amount: "",
+    date: "",
+    cause: GIVE_WAYS[0].title,
+    email: "",
+    message: "",
+  });
+  const [sent, setSent] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+    setSent(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const displayName =
+      form.anonymous || !form.name.trim() ? "Anonymous" : form.name.trim();
+
+    const lines = [
+      "Hi Sanusi Jafar Foundation,",
+      "",
+      "I just made a bank transfer and wanted to let you know:",
+      "",
+      `Name: ${displayName}`,
+      `Amount: \u20a6${form.amount || "[not specified]"}`,
+      form.date ? `Date of transfer: ${form.date}` : null,
+      `What it's for: ${form.cause}`,
+      !form.anonymous && form.email
+        ? `Email (for a thank-you note): ${form.email}`
+        : null,
+      form.message ? `Message: ${form.message}` : null,
+      "",
+      "Thank you!",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.location.href = mailto("Donation confirmation", lines);
+    setSent(true);
+  };
+
+  return (
+    <section className="dn-sec dn-confirm" aria-labelledby="dn-confirm-title">
+      <div className="dn-wrap">
+        <Reveal>
+          <p className="dn-eyebrow">Already sent a transfer?</p>
+          <h2 id="dn-confirm-title" className="dn-h2">
+            Let us know, so we can say thank you.
+          </h2>
+          <p className="dn-lead" style={{ marginBottom: 28 }}>
+            A bank transfer doesn&rsquo;t always tell us who it&rsquo;s from.
+            Fill this in — anonymously if you&rsquo;d like — and we&rsquo;ll
+            know your gift arrived.
+          </p>
+        </Reveal>
+
+        <Reveal className="dn-confirm__card">
+          <form onSubmit={handleSubmit} className="dn-confirm__form">
+            <label className="dn-check">
+              <input
+                type="checkbox"
+                name="anonymous"
+                checked={form.anonymous}
+                onChange={handleChange}
+              />
+              I&rsquo;d like to remain anonymous
+            </label>
+
+            {!form.anonymous && (
+              <div className="dn-formfield">
+                <label htmlFor="dn-name">Name</label>
+                <input
+                  id="dn-name"
+                  name="name"
+                  type="text"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                />
+              </div>
+            )}
+
+            <div className="dn-formrow">
+              <div className="dn-formfield">
+                <label htmlFor="dn-amount">Amount transferred *</label>
+                <div className="dn-amountinput">
+                  <span aria-hidden="true">&#8358;</span>
+                  <input
+                    id="dn-amount"
+                    name="amount"
+                    type="number"
+                    min="0"
+                    inputMode="numeric"
+                    value={form.amount}
+                    onChange={handleChange}
+                    placeholder="0"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="dn-formfield">
+                <label htmlFor="dn-date">Date of transfer</label>
+                <input
+                  id="dn-date"
+                  name="date"
+                  type="date"
+                  value={form.date}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div className="dn-formfield">
+              <label htmlFor="dn-cause">What was it for?</label>
+              <select
+                id="dn-cause"
+                name="cause"
+                value={form.cause}
+                onChange={handleChange}
+              >
+                {GIVE_WAYS.map((w) => (
+                  <option key={w.title} value={w.title}>
+                    {w.title}
+                  </option>
+                ))}
+                <option value="Not sure / general">Not sure / general</option>
+              </select>
+            </div>
+
+            {!form.anonymous && (
+              <div className="dn-formfield">
+                <label htmlFor="dn-email">
+                  Email (optional, for a thank-you note)
+                </label>
+                <input
+                  id="dn-email"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com"
+                />
+              </div>
+            )}
+
+            <div className="dn-formfield">
+              <label htmlFor="dn-message">
+                Anything else you&rsquo;d like us to know?
+              </label>
+              <textarea
+                id="dn-message"
+                name="message"
+                rows={3}
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Optional message"
+              />
+            </div>
+
+            <button type="submit" className="dn-btn dn-btn--primary">
+              <LuHeart aria-hidden="true" /> Let Us Know
+            </button>
+
+            {sent && (
+              <p className="dn-confirm__notice" role="status">
+                Your email app should open with these details filled in — just
+                hit send. If it doesn&rsquo;t open, email us directly at{" "}
+                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+              </p>
+            )}
+          </form>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function ClosingNote() {
   return (
     <section className="dn-closing" aria-labelledby="dn-closing-title">
@@ -382,6 +576,7 @@ export default function Donate() {
       <style>{CSS}</style>
       <Hero />
       <HowToGive />
+      <ConfirmDonation />
       {/* <ImpactStrip /> */}
       <WaysToGive />
       <ClosingNote />
@@ -470,6 +665,41 @@ const CSS = `
 .dn-field__copy { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border: 0; border-radius: 50%; background: var(--peach); color: var(--od); cursor: pointer; }
 .dn-field__copy svg { width: 15px; height: 15px; }
 .dn-field__copy:hover { background: var(--sun); }
+
+/* ---- Confirm donation form ---- */
+.dn-confirm { background: #eef8f2; }
+.dn-confirm__card { max-width: 640px; margin: 0 auto; padding: clamp(24px, 4vw, 36px); background: #fff; border: 2px solid var(--ink); border-radius: 26px; box-shadow: 6px 8px 0 var(--ink); }
+.dn-confirm__form { display: grid; gap: 18px; }
+
+.dn-check { display: flex; align-items: center; gap: 10px; font-size: 0.92rem; font-weight: 600; color: var(--ink); cursor: pointer; }
+.dn-check input { width: 18px; height: 18px; accent-color: var(--od); cursor: pointer; }
+
+.dn-formfield { display: grid; gap: 6px; }
+.dn-formfield label { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
+.dn-formfield input,
+.dn-formfield select,
+.dn-formfield textarea {
+  padding: 11px 14px; border: 2px solid var(--ink); border-radius: 12px;
+  background: var(--cream); font-size: 0.95rem; color: var(--ink); font-family: var(--sans);
+  resize: vertical;
+}
+.dn-formfield input:focus,
+.dn-formfield select:focus,
+.dn-formfield textarea:focus { outline: none; border-color: var(--od); }
+
+.dn-formrow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.dn-amountinput { display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid var(--ink); border-radius: 12px; background: var(--cream); }
+.dn-amountinput span { font-weight: 700; color: var(--ink); }
+.dn-amountinput input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 11px 0; }
+.dn-amountinput input:focus { outline: none; }
+
+.dn-confirm__notice { margin: 4px 0 0; padding: 12px 14px; background: var(--mint); border-radius: 10px; font-size: 0.88rem; color: var(--ink); }
+.dn-confirm__notice a { color: var(--oi); font-weight: 700; }
+
+@media (max-width: 560px) {
+  .dn-formrow { grid-template-columns: 1fr; }
+}
 
 /* ---- Closing note ---- */
 .dn-closing { padding-block: clamp(48px, 6vw, 88px); background: #fff4ea; }

@@ -25,7 +25,7 @@ const heroImages = [
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Hero() {
         src={healTheWorld}
         loop
         preload="auto"
-        // autoPlay={true}
+        autoPlay={true}
       />
       <div className="hero__media">
         {heroImages.map((image, index) => (

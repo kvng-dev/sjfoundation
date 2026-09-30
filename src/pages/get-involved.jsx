@@ -311,7 +311,12 @@ function Donate() {
           <a href={DONATE_HREF} className="gi-btn gi-btn--primary">
             <LuHeart aria-hidden="true" /> Donate Now
           </a>
-          <p className="gi-donate__note">
+          <p
+            style={{
+              paddingTop: "12px",
+            }}
+            className="gi-donate__note"
+          >
             We&rsquo;ll get back to you with the best way to give.
           </p>
         </Reveal>
@@ -463,7 +468,7 @@ const CSS = `
 .gi-give__card h3 { font-family: var(--serif); font-size: 1.08rem; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
 .gi-give__card p { font-size: 0.85rem; line-height: 1.55; }
 .gi-donate__cta { margin-top: 36px; text-align: center; }
-.gi-donate__note { margin-top: 12px; font-size: 0.82rem; font-style: italic; color: var(--body); }
+.gi-donate__note { margin-top: 18px; font-size: 0.82rem; font-style: italic; color: var(--body); }
 
 /* ---- Smiles early ---- */
 .gi-smiles { position: relative; padding-block: clamp(56px, 7vw, 100px); background: var(--navy); color: #fff; overflow: hidden; }
