@@ -128,11 +128,11 @@ export default function Hero() {
           </p>
 
           <div className="hero__actions">
-            <Button href="#focus" arrow>
+            <Button href="/our-work" arrow>
               Our Work
             </Button>
 
-            <Button href="#get-involved" variant="outline">
+            <Button href="/get-involved" variant="outline">
               Partner With Us
             </Button>
 

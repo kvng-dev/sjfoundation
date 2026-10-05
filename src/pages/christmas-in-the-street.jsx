@@ -30,7 +30,7 @@ import { Doodle } from "../components/Doodles.jsx";
 // Reusing existing site photos as placeholders — swap for real,
 // edition-specific photos when you have them.
 import heroPhoto from "../assets/IMG-20260923-WA0062.jpg";
-import edition1Photo from "../assets/IMG_3119.JPG.jpeg";
+import edition1Photo from "../assets/DSC_8457.JPG";
 import edition2Photo from "../assets/IMG_3169.JPG.jpeg";
 import edition3Photo from "../assets/IMG_3167.JPG.jpeg";
 import streetPhoto from "../assets/IMG-20260923-WA0067.jpg";

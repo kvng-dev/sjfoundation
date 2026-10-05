@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import { Doodle } from "./Doodles.jsx";
 
-import photo from "../assets/IMG_3132.JPG.jpeg";
+import photo from "../assets/IMG-20260923-WA0149.jpg";
 
 const LINK = "/christmas-on-the-streets";
 

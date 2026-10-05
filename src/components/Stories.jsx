@@ -10,7 +10,7 @@ export default function Stories() {
             <p className="eyebrow">Latest stories</p>
             <h2 className="h2">Real stories. Lasting impact.</h2>
           </div>
-          <a className="text-link" href="#stories">
+          <a className="text-link" href="/about">
             View All Stories <LuArrowRight aria-hidden="true" />
           </a>
         </div>

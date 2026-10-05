@@ -30,7 +30,7 @@ import {
 import { Doodle } from "../components/Doodles.jsx";
 
 // Reusing existing site photos as placeholders.
-import christmasPhoto from "../assets/IMG_3132.JPG.jpeg";
+import christmasPhoto from "../assets/DSC_8954.JPG";
 import smilesPhoto from "../assets/IMG_3127.JPG.jpeg";
 
 /* ==========================================================================
@@ -147,8 +147,8 @@ function Hero() {
         </h1>
         <p className="ow-lead">
           Right now, our work lives in two places:{" "}
-          <strong>Christmas on the Streets</strong>, the flagship day
-          we&rsquo;ve run for three years and counting, and{" "}
+          <strong>Christmas in the Street</strong>, the flagship day we&rsquo;ve
+          run for three years and counting, and{" "}
           <strong>Project 1,000 Smiles</strong>, the year-round commitment
           we&rsquo;re building next.
         </p>

@@ -28,24 +28,35 @@ import { useEffect, useRef, useState } from "react";
 import { LuX, LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { Doodle } from "../components/Doodles.jsx";
 
-import photo1 from "../assets/IMG_3119.JPG.jpeg";
-import photo2 from "../assets/IMG_3169.JPG.jpeg";
-import photo3 from "../assets/IMG_3167.JPG.jpeg";
-import photo4 from "../assets/IMG_3168.JPG.jpeg";
-import photo5 from "../assets/IMG_3165.JPG.jpeg";
-import photo6 from "../assets/IMG_3112.JPG.jpeg";
-import photo7 from "../assets/IMG_3125.JPG.jpeg";
-import photo8 from "../assets/IMG_3113.JPG.jpeg";
+import photo1 from "../assets/DSC_8457.JPG";
+import photo2 from "../assets/IMG-20251230-WA0172.jpg";
+import photo3 from "../assets/IMG-20251230-WA0173.jpg";
+import photo4 from "../assets/IMG-20251230-WA0091.jpg";
+import photo5 from "../assets/DSC_8337.JPG";
+import photo6 from "../assets/DSC_9152.JPG";
+import photo7 from "../assets/DSC_8776.JPG";
+import photo8 from "../assets/IMG-20251230-WA0161.jpg";
+import photo9 from "../assets/IMG-20260923-WA0116.jpg";
+import photo10 from "../assets/IMG-20260923-WA0143.jpg";
 
 const PHOTOS = [
-  { src: photo1, alt: "A child at Edition 1", caption: "Edition 1", big: true },
+  {
+    src: photo1,
+    alt: "A child at Edition 1",
+    caption: "Health checks",
+    big: true,
+  },
   { src: photo2, alt: "A child at Edition 2", caption: "Edition 2" },
-  { src: photo3, alt: "A child at Edition 3", caption: "Edition 3" },
-  { src: photo4, alt: "Street outreach", caption: "Into the streets" },
+  {
+    src: photo3,
+    alt: "A child at Edition 3",
+    caption: "Kids showing their catwalks",
+  },
+  { src: photo4, alt: "Street outreach", caption: "Volunteers" },
   {
     src: photo5,
     alt: "The mosque visit",
-    caption: "The mosque visit",
+    caption: "Happy kids ",
     big: true,
     bigRight: true,
   },
@@ -57,7 +68,7 @@ const PHOTOS = [
   {
     src: photo7,
     alt: "A mother and daughter at the event",
-    caption: "Foodstuffs for widows",
+    caption: "Santa klaus & kids",
   },
   {
     src: photo8,
@@ -68,11 +79,15 @@ const PHOTOS = [
   // perfectly filled (10 tiles total = zero empty cells, see GRID MATH
   // above). Swap these two for real, distinct photos whenever you have them.
   {
-    src: photo3,
+    src: photo10,
     alt: "More laughter from the party",
-    caption: "More laughter",
+    caption: "Behind the scenes",
   },
-  { src: photo7, alt: "Another smiling face", caption: "Another smile" },
+  {
+    src: photo9,
+    alt: "Another smiling face",
+    caption: "Mother & her child seeing santa",
+  },
 ];
 
 export default function GallerySection() {
