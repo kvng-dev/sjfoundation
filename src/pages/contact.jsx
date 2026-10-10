@@ -68,7 +68,7 @@ const REASONS = [
 const REDIRECTS = [
   {
     title: "Want to volunteer or partner?",
-    text: "Edition 4 of Christmas on the Streets is this December — hands and partners both welcome.",
+    text: "Edition 4 of Christmas on the Streets is this December, hands and partners both welcome.",
     cta: "Go to Get Involved",
     href: "/get-involved",
     icon: LuHandshake,
@@ -156,8 +156,8 @@ function Hero() {
           Let&rsquo;s talk.
         </h1>
         <p className="ct-lead">
-          Questions about volunteering, partnering, or anything else &mdash;
-          we&rsquo;d love to hear from you.
+          Questions about volunteering, partnering, or anything else we&rsquo;d
+          love to hear from you.
         </p>
       </div>
     </section>

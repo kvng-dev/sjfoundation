@@ -41,7 +41,7 @@ export const navLinks = [
 export const heroStats = [
   { value: "1,354+", label: "Children Reached" },
   { value: "273+", label: "Women Reached" },
-  { value: "1,000", label: "Smiles We're Building Towards" },
+  { value: "4", label: "Core areas of impact" },
   { value: "1", label: "Community at a Time" },
 ];
 

@@ -98,7 +98,7 @@ const PHOTOS = {
 
 // Where the buttons go. Change to match your routes.
 const LINKS = {
-  project: "/#project",
+  project: "/project-1000-smiles",
   partner: "/#get-involved",
   volunteer: "/#get-involved",
   donate: "/#donate",

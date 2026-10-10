@@ -68,7 +68,7 @@ const VOLUNTEER_ROLES = [
 const GIVE_WAYS = [
   {
     title: "General donation",
-    text: "Give toward wherever the need is greatest this edition — the party, the health checks, or the foodstuffs.",
+    text: "Give toward wherever the need is greatest this edition. The party, the health checks, or the foodstuffs.",
     icon: LuHeart,
   },
   {
@@ -181,7 +181,7 @@ function Hero() {
         </h1>
         <p className="gi-lead">
           Whether you have a Saturday in December, a network to connect us with,
-          or a gift to give &mdash; there&rsquo;s a place for you here.
+          or a gift to give. there&rsquo;s a place for you here.
         </p>
 
         <nav className="gi-jump" aria-label="Jump to a section">
@@ -261,8 +261,8 @@ function Partner() {
           </h2>
           <p>
             Businesses, community groups and organisations help us reach further
-            &mdash; sponsoring supplies, lending a venue, or joining hands on
-            the day itself. If that sounds like you, we&rsquo;d love to talk.
+            sponsoring supplies, lending a venue, or joining hands on the day
+            itself. If that sounds like you, we&rsquo;d love to talk.
           </p>
           <a href={LINKS.partnerMailto} className="gi-btn gi-btn--white">
             <LuHandshake aria-hidden="true" /> Start A Conversation
@@ -349,9 +349,8 @@ function SmilesEarly() {
             Project 1,000 Smiles
           </h2>
           <p className="gi-lead gi-lead--dark">
-            It hasn&rsquo;t launched yet &mdash; which means there&rsquo;s still
-            time to be part of it from day one, not just once it&rsquo;s
-            running.
+            It hasn&rsquo;t launched yet, which means there&rsquo;s still time
+            to be part of it from day one, not just once it&rsquo;s running.
           </p>
           <div className="gi-smiles__actions">
             <a href={LINKS.smilesMailto} className="gi-btn gi-btn--primary">
@@ -419,7 +418,7 @@ const CSS = `
 .gi-h1 { margin-bottom: 18px; font-family: var(--serif); font-size: clamp(2.1rem, 4.4vw, 3.4rem); font-weight: 500; line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); max-width: 18ch; }
 .gi-h2 { margin-bottom: 16px; font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
 .gi-h2--light { color: #fff; }
-.gi-lead { max-width: 38rem; font-size: clamp(1.02rem, 1.3vw, 1.15rem); line-height: 1.65; margin-bottom: 26px; }
+.gi-lead { max-width: 38rem; font-size: clamp(1.02rem, 1.3vw, 1.15rem); line-height: 1.65; margin-bottom: 26px; padding-bottom: 16px;  }
 .gi-lead--dark { color: var(--body); }
 
 .gi-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; padding: 0.85rem 1.6rem; border: 2px solid var(--ink); border-radius: 999px; font-family: var(--sans); font-size: 0.92rem; font-weight: 700; text-decoration: none; cursor: pointer; box-shadow: 3px 4px 0 var(--ink); transition: transform 0.15s, box-shadow 0.15s, background-color 0.2s; }

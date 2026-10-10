@@ -40,7 +40,7 @@ import whyPhoto from "../assets/IMG_3119.JPG.jpeg";
    EDITABLE CONTENT
    ========================================================================== */
 
-const CONTACT_EMAIL = "sanusijafarfoundation@gmail.com";
+const CONTACT_EMAIL = "info@sanusijafarfoundation.org";
 
 const NOTIFY_MAILTO =
   `mailto:${CONTACT_EMAIL}?subject=` +
@@ -58,7 +58,7 @@ const PRINCIPLES = [
   {
     icon: LuEar,
     title: "Listen before we act",
-    text: "We start by understanding what a community actually needs — not what we assume it does.",
+    text: "We start by understanding what a community actually needs, not what we assume it does.",
   },
   {
     icon: LuCalendarCheck,
@@ -68,7 +68,7 @@ const PRINCIPLES = [
   {
     icon: LuSprout,
     title: "Create opportunities, not dependency",
-    text: "The aim is pathways and possibilities — people as active participants in a better future, not only recipients of support.",
+    text: "The aim is pathways and possibilities, people as active participants in a better future, not only recipients of support.",
   },
   {
     icon: LuChartColumn,
@@ -83,7 +83,7 @@ const STATUS_STEPS = [
     state: "done",
     label: "Where it started",
     title: "Three editions of Christmas on the Streets",
-    text: "They showed us what one Saturday can do — and what it can’t.",
+    text: "They showed us what one Saturday can do and what it can’t.",
   },
   {
     state: "current",
@@ -106,11 +106,11 @@ const FAQ = [
   },
   {
     q: "Does Christmas on the Streets continue?",
-    a: "Yes. Edition 4 is on Saturday, December 19, 2026. Project 1,000 Smiles is built to sit alongside it — carrying the same spirit through the rest of the year.",
+    a: "Yes. Edition 4 is on Saturday, December 19, 2026. Project 1,000 Smiles is built to sit alongside it, carrying the same spirit through the rest of the year.",
   },
   {
     q: "Is 1,000 the finish line?",
-    a: "No. 1,000 is the commitment — 1,000 moments of hope, inclusion and possibility. The aim is to build something that can continue long after the smile fades.",
+    a: "No. 1,000 is the commitment to 1,000 moments of hope, inclusion and possibility. The aim is to build something that can continue long after the smile fades.",
   },
   {
     q: "How can I help before it launches?",
@@ -301,8 +301,8 @@ function SmileWall() {
           </h2>
           <p className="ps-wall__text">
             The goal isn&rsquo;t simply to create 1,000 smiles. It is to create
-            1,000 moments of hope, inclusion and possibility &mdash; while
-            building something that can continue long after the smile fades.
+            1,000 moments of hope, inclusion and possibility while building
+            something that can continue long after the smile fades.
           </p>
           <p className="ps-wall__count">
             <strong>{SMILES_SO_FAR.toLocaleString("en-US")}</strong> of{" "}
@@ -451,8 +451,8 @@ function ClosingCta() {
             Be there from day one.
           </h2>
           <p className="ps-cta__text">
-            Tell us you&rsquo;re interested and we&rsquo;ll keep you posted
-            &mdash; or help build what comes next in the meantime.
+            Tell us you&rsquo;re interested and we&rsquo;ll keep you posted or
+            help build what comes next in the meantime.
           </p>
           <div className="ps-cta__actions">
             <a href={NOTIFY_MAILTO} className="ps-btn ps-btn--primary">

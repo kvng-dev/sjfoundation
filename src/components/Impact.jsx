@@ -13,7 +13,7 @@ export default function Impact() {
             Through your support, we&rsquo;re creating opportunities, nurturing
             hope in children, and helping families and communities thrive.
           </p>
-          <Button href="#impact" variant="outline-orange" arrow>
+          <Button href="/impact" variant="outline-orange" arrow>
             View Our Impact
           </Button>
         </div>

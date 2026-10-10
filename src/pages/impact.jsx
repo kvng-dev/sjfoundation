@@ -74,7 +74,7 @@ const LINKS = {
   getInvolved: "/get-involved",
   volunteer: "/get-involved#volunteer",
   donate: "/get-involved#donate",
-  smiles: "/our-work#smiles",
+  smiles: "/project-1000-smiles",
   christmas: "/christmas-on-the-streets",
 };
 
@@ -350,7 +350,13 @@ function WhatsAhead() {
         </ul>
 
         <Reveal>
-          <Link to={LINKS.smiles} className="im-btn im-btn--white">
+          <Link
+            to={LINKS.smiles}
+            style={{
+              marginTop: 14,
+            }}
+            className="im-btn im-btn--white"
+          >
             Learn About Project 1,000 Smiles <LuArrowRight aria-hidden="true" />
           </Link>
         </Reveal>

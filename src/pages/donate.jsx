@@ -68,7 +68,7 @@ const DONATE_MAILTO = mailto(
 const GIVE_WAYS = [
   {
     title: "General donation",
-    text: "Give toward wherever the need is greatest this edition — the party, the health checks, or the foodstuffs.",
+    text: "Give toward wherever the need is greatest, this edition the party, the health checks, or the foodstuffs.",
     icon: LuHeart,
   },
   {
