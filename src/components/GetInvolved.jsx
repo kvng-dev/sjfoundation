@@ -1,6 +1,6 @@
-import Button from './Button.jsx';
-import { LuArrowRight } from 'react-icons/lu';
-import { involveOptions } from '../data/content.js';
+import Button from "./Button.jsx";
+import { LuArrowRight } from "react-icons/lu";
+import { involveOptions } from "../data/content.js";
 
 export default function GetInvolved() {
   return (
@@ -12,12 +12,18 @@ export default function GetInvolved() {
           <p>
             Your support helps us reach more children, mothers and communities.
           </p>
-          <Button href="#get-involved" variant="outline-orange" arrow>Ways to Help</Button>
+          <Button href="/get-involved" variant="outline-orange" arrow>
+            Ways to Help
+          </Button>
         </div>
 
         <ul className="involve__options">
           {involveOptions.map(({ title, text, cta, href, icon: Icon }) => (
-            <li className="involve__option" key={title} id={title === 'Donate' ? 'donate' : undefined}>
+            <li
+              className="involve__option"
+              key={title}
+              id={title === "Donate" ? "donate" : undefined}
+            >
               <Icon className="involve__icon" aria-hidden="true" />
               <div>
                 <h3 className="involve__title">{title}</h3>

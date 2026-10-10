@@ -87,7 +87,7 @@ export const involveOptions = [
     title: "Volunteer",
     text: "Share your time, skills and compassion.",
     cta: "Join Us",
-    href: "/contact",
+    href: "/get-involved",
     icon: LuUsers,
   },
   {
