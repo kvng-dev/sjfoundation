@@ -68,7 +68,7 @@ const DONATE_MAILTO = mailto(
 const GIVE_WAYS = [
   {
     title: "General donation",
-    text: "Give toward wherever the need is greatest, this edition the party, the health checks, or the foodstuffs.",
+    text: "Give towards wherever the need is greatest, this edition the party, the health checks, or the foodstuffs.",
     icon: LuHeart,
   },
   {
@@ -413,8 +413,8 @@ function ConfirmDonation() {
           </h2>
           <p className="dn-lead" style={{ marginBottom: 28 }}>
             A bank transfer doesn&rsquo;t always tell us who it&rsquo;s from.
-            Fill this in — anonymously if you&rsquo;d like — and we&rsquo;ll
-            know your gift arrived.
+            Fill this in anonymously if you&rsquo;d like and we&rsquo;ll know
+            your gift arrived.
           </p>
         </Reveal>
 
@@ -551,7 +551,7 @@ function ClosingNote() {
             style={{ top: 18, left: 24, width: 32 }}
           />
           <h2 id="dn-closing-title" className="dn-h2 dn-h2--center">
-            Every donation goes toward Christmas on the Streets and, soon,
+            Every donation goes towards Christmas in the Street and, soon,
             Project 1,000 Smiles.
           </h2>
           <p className="dn-closing__text">Thank you for trusting us with it.</p>

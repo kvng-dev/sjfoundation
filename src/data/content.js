@@ -170,7 +170,7 @@ export const footerLinks = [
 
 export const contact = {
   phone: "+234 707 005 6736",
-  phoneHref: "tel:+2347070056736",
+  phoneHref: "tel:+234707005673",
   email: "info@sanusijafarfoundation.org",
   location: "Lagos, Nigeria",
 };

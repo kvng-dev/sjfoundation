@@ -146,11 +146,16 @@ function Hero() {
           This is how we show up.
         </h1>
         <p className="ow-lead">
-          Right now, our work comes down to two things.{" "}
+          {/* Right now, our work comes down to two things.{" "}
           <strong>Christmas in the Street</strong> is the flagship day
           we&rsquo;ve run for three years and counting.{" "}
           <strong>Project 1,000 Smiles</strong> is the year-round commitment
-          we&rsquo;re building next.
+          we&rsquo;re building next. */}
+          Our work is centred on two complementary initiatives:{" "}
+          <strong>Christmas in the Street</strong>, our flagship annual
+          outreach, and <strong>Project 1,000 Smiles</strong>, our emerging
+          year-round commitment to creating lasting impact for children, mothers
+          and communities.
         </p>
       </div>
     </section>
@@ -175,9 +180,10 @@ function Teasers() {
           <div className="ow-teaser__body">
             <h2>Christmas in the Street</h2>
             <p>
-              A party for children, health checks for the adults who bring them,
-              and foodstuffs for widows and market women, every December, three
-              editions and counting.
+              An annual community outreach bringing Christmas joy to children,
+              basic health screenings to adults and essential food supplies to
+              widows, market women & mothers. Three editions down, with more
+              smiles to create every December.
             </p>
             <Link to={LINKS.christmas} className="ow-textlink">
               Explore Christmas in the Street{" "}
@@ -241,9 +247,6 @@ function FocusAreas() {
                 </span>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <span className="ow-focus__seen">
-                  <LuMapPin aria-hidden="true" /> {seenIn}
-                </span>
               </Reveal>
             </li>
           ))}
@@ -270,7 +273,7 @@ function ClosingCta() {
             style={{ bottom: 20, right: 28, width: 34 }}
           />
           <h2 id="ow-cta-title" className="ow-h2 ow-h2--center">
-            Be part of Edition 4 &mdash; or Project 1,000 Smiles from day one.
+            Be part of Edition 4 or Project 1,000 Smiles from day one.
           </h2>
           <div className="ow-cta__actions">
             <Link to={LINKS.volunteer} className="ow-btn ow-btn--primary">

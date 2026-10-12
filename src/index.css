@@ -565,11 +565,13 @@ a {
   position: relative;
   z-index: 1;
   display: flex;
+  pointer-events: none;
   align-items: center;
   min-height: clamp(460px, 44vw, 600px);
   padding-block: 56px;
 }
 .hero__copy {
+  pointer-events: auto;
   max-width: 560px;
 }
 .hero__title {

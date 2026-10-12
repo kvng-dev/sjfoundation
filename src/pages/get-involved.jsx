@@ -28,6 +28,7 @@ import {
   LuHeartPulse,
   LuMail,
   LuMegaphone,
+  LuMessageCircle,
   LuPackage,
   LuUsers,
 } from "react-icons/lu";
@@ -56,19 +57,15 @@ const VOLUNTEER_ROLES = [
   { icon: LuHeartPulse, text: "Supporting the blood pressure check station" },
   {
     icon: LuPackage,
-    text: "Packing and distributing foodstuffs to widows & market women",
+    text: "Packing and distributing foodstuffs to widows, mothers & market women",
   },
   { icon: LuUsers, text: "Joining the street outreach team" },
-  {
-    icon: LuHandHeart,
-    text: "Joining the mosque visit, days after the main event",
-  },
 ];
 
 const GIVE_WAYS = [
   {
     title: "General donation",
-    text: "Give toward wherever the need is greatest this edition. The party, the health checks, or the foodstuffs.",
+    text: "Give towards wherever the need is greatest this edition. The party, the health checks, or the foodstuffs.",
     icon: LuHeart,
   },
   {
@@ -90,8 +87,8 @@ const GIVE_WAYS = [
 
 const LINKS = {
   volunteerMailto: mailto(
-    "Volunteering for Christmas on the Streets — Edition 4",
-    "Hi Sanusi Jafar Foundation,\n\nI'd like to volunteer for this year's Christmas on the Streets (Edition 4). Let me know how I can help.\n\nThanks!"
+    "Volunteering for Christmas in the Street — Edition 4",
+    "Hi Sanusi Jafar Foundation,\n\nI'd like to volunteer for this year's Christmas in the Street (Edition 4). Let me know how I can help.\n\nThanks!"
   ),
   partnerMailto: mailto(
     "Partnership enquiry",
@@ -101,6 +98,8 @@ const LINKS = {
     "Keep me posted on Project 1,000 Smiles",
     "Hi Sanusi Jafar Foundation,\n\nPlease keep me posted as Project 1,000 Smiles gets closer to launching.\n\nThanks!"
   ),
+  whatsapp:
+    "https://wa.me/2347070056736?text=Hello%2C%20we%27d%20like%20to%20partner%20with%20you",
   christmas: "/christmas-on-the-streets",
   smilesPage: "/our-work#smiles",
 };
@@ -214,8 +213,8 @@ function Volunteer() {
             Volunteer for Edition 4
           </h2>
           <p className="gi-lead gi-lead--dark">
-            Christmas on the Streets runs on volunteers. Here&rsquo;s where
-            hands are needed this year:
+            Christmas in the Street runs on volunteers. Here&rsquo;s where hands
+            are needed this year:
           </p>
           <a href={LINKS.volunteerMailto} className="gi-btn gi-btn--primary">
             <LuMail aria-hidden="true" /> Email Us To Volunteer
@@ -234,7 +233,7 @@ function Volunteer() {
             ))}
           </ul>
           <Link to={LINKS.christmas} className="gi-textlink">
-            Read the full story of Christmas on the Streets{" "}
+            Read the full story of Christmas in the Street{" "}
             <LuArrowRight aria-hidden="true" />
           </Link>
         </Reveal>
@@ -266,6 +265,17 @@ function Partner() {
           </p>
           <a href={LINKS.partnerMailto} className="gi-btn gi-btn--white">
             <LuHandshake aria-hidden="true" /> Start A Conversation
+          </a>
+          <a
+            href={LINKS.whatsapp}
+            style={{
+              marginLeft: "12px",
+            }}
+            className="gi-btn gi-btn--white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LuMessageCircle aria-hidden="true" /> Chat Us On WhatsApp
           </a>
         </Reveal>
       </div>
@@ -308,9 +318,9 @@ function Donate() {
         </ul>
 
         <Reveal className="gi-donate__cta">
-          <a href={DONATE_HREF} className="gi-btn gi-btn--primary">
+          <Link href="/donate" className="gi-btn gi-btn--primary">
             <LuHeart aria-hidden="true" /> Donate Now
-          </a>
+          </Link>
           <p
             style={{
               paddingTop: "12px",

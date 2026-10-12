@@ -30,6 +30,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaTiktok,
+  FaWhatsapp,
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
@@ -54,7 +55,11 @@ const SOCIALS = [
     href: "https://www.tiktok.com/@sanusijafarfoundation?_r=1&_t=ZS-9A05NRww5c9",
     icon: FaTiktok,
   },
-  { label: "YouTube", href: "#", icon: FaYoutube },
+  {
+    label: "Whatsapp",
+    href: "https://wa.me/2347070056736?text=Hello%2C%20we%27d%20like%20to%20partner%20with%20you",
+    icon: FaWhatsapp,
+  },
 ];
 
 const REASONS = [
@@ -68,14 +73,14 @@ const REASONS = [
 const REDIRECTS = [
   {
     title: "Want to volunteer or partner?",
-    text: "Edition 4 of Christmas on the Streets is this December, hands and partners both welcome.",
+    text: "Join Us This December. Christmas in the Street turns four, and there's room for every hand and every partner who wants to make the season brighter for others.",
     cta: "Go to Get Involved",
     href: "/get-involved",
     icon: LuHandshake,
   },
   {
     title: "Ready to give?",
-    text: "See the ways to give and how to reach us if you'd rather donate directly.",
+    text: "Support Us Your Way. Prefer to donate directly? See how to give and how to contact us below.",
     cta: "Go to Donate",
     href: "/donate",
     icon: LuHeart,
@@ -156,8 +161,8 @@ function Hero() {
           Let&rsquo;s talk.
         </h1>
         <p className="ct-lead">
-          Questions about volunteering, partnering, or anything else we&rsquo;d
-          love to hear from you.
+          Questions about volunteering, partnerships, or anything else?{" "}
+          We&rsquo;d love to hear from you.
         </p>
       </div>
     </section>
@@ -216,23 +221,32 @@ function ContactForm() {
     reason: REASONS[0],
     message: "",
   });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   const update = (field) => (e) =>
     setValues((v) => ({ ...v, [field]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const subject = `Website enquiry: ${values.reason}`;
-    const body =
-      `Name: ${values.name}\n` +
-      `Email: ${values.email}\n` +
-      `Reason: ${values.reason}\n\n` +
-      `${values.message}`;
-    window.location.href = `mailto:${
-      CONTACT.email
-    }?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formspree.io/f/xppqjolk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...values,
+          _subject: `Website enquiry: ${values.reason}`,
+        }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("sent");
+      setValues({ name: "", email: "", reason: REASONS[0], message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -301,14 +315,22 @@ function ContactForm() {
             />
           </label>
 
-          <button type="submit" className="ct-btn ct-btn--primary">
-            <LuSend aria-hidden="true" /> Send Message
+          <button
+            type="submit"
+            className="ct-btn ct-btn--primary"
+            disabled={status === "sending"}
+          >
+            <LuSend aria-hidden="true" />{" "}
+            {status === "sending" ? "Sending..." : "Send Message"}
           </button>
 
           <p className="ct-form__note" aria-live="polite">
-            {sent
-              ? "Opening your email app with your message ready to send — if nothing opened, email us directly instead."
-              : "This opens your email app with your message pre-filled, ready to send."}
+            {status === "sent" &&
+              "Thank you! Your message has been sent. We'll get back to you soon."}
+            {status === "error" &&
+              "Something went wrong. Please try again, or message us on WhatsApp."}
+            {(status === "idle" || status === "sending") &&
+              "We read every message and reply as soon as we can."}
           </p>
         </Reveal>
       </div>

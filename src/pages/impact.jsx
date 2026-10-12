@@ -209,7 +209,7 @@ function GrowthRecap() {
         <Reveal>
           <p className="im-eyebrow">How we got here</p>
           <h2 id="im-recap-title" className="im-h2">
-            Edition over edition.
+            Edition after edition.
           </h2>
         </Reveal>
 

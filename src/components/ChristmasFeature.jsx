@@ -63,10 +63,11 @@ export default function ChristmasFeature() {
             3 editions. 1,354+ children reached. And counting.
           </p>
           <p className="cf-text">
-            Every December, we throw a party for children, run health checks for
-            the adults who bring them, and hand out foodstuffs to widows and
-            market women & mothers in the community. Our next edition is
-            December 19.
+            Every December, Christmas in the Street brings joy to children,
+            provides basic health screenings for adults, and supports widows and
+            market women with essential food supplies. Now in its fourth
+            edition, we return on 19 December 2026 to share hope, dignity and
+            the joy of Christmas with our community.
           </p>
           <Link to={LINK} className="cf-btn">
             Explore Christmas In The Street <LuArrowRight aria-hidden="true" />
