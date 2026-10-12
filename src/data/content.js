@@ -130,17 +130,17 @@ export const stories = [
   },
   {
     title: "Stronger Together",
-    text: "The power of support, from mothers to mothers.",
+    text: "Support one mother, and a whole household grows stronger.",
     image: story2,
     alt: "A mother and daughter smiling together",
-    href: "/about",
+    href: "/impact",
   },
   {
     title: "Building Opportunities",
     text: "Youth development creates new possibilities.",
     image: story3,
     alt: "A group of young people smiling in orange and yellow",
-    href: "/about",
+    href: "/get-involved",
   },
 ];
 

@@ -40,13 +40,13 @@ export default function FeaturedInitiative() {
           </h2>
           <p className="featured__sub">More than a number. A commitment.</p>
           <p className="featured__text">
-            Project 1,000 Smiles is a new, year-round initiative we&rsquo;re
+            Project 1,000 Smiles is a year round initiative we&rsquo;re
             preparing to launch; built to carry the same hope and belonging we
             bring every December into every month of the year, for children,
             mothers and communities.
           </p>
           {/* Points at this section for now; swap to the dedicated page once it exists. */}
-          <a href="#project" className="btn btn--white">
+          <a href="/project-1000-smiles" className="btn btn--white">
             Learn More <LuArrowRight aria-hidden="true" />
           </a>
         </div>

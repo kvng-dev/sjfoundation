@@ -42,13 +42,13 @@ const FOCUS = [
     title: "Child Welfare",
     text: "Creating safer, brighter futures for children.",
     icon: LuBaby,
-    seenIn: "Christmas on the Streets",
+    seenIn: "Christmas in the Street",
   },
   {
     title: "Women Empowerment",
     text: "Supporting mothers and women to build stronger households and communities.",
     icon: LuFlower2,
-    seenIn: "Christmas on the Streets",
+    seenIn: "Christmas in the Street",
   },
   {
     title: "Youth Development",
@@ -60,15 +60,15 @@ const FOCUS = [
     title: "Community Outreach",
     text: "Responding to practical needs while building stronger community relationships.",
     icon: LuHeartHandshake,
-    seenIn: "Christmas on the Streets",
+    seenIn: "Christmas in the Street",
   },
 ];
 
 const LINKS = {
   christmas: "/christmas-in-the-street",
-  volunteer: "/get-involved#volunteer",
-  partner: "/get-involved#partner",
-  donate: "/get-involved#donate",
+  volunteer: "/get-involved",
+  partner: "/contact",
+  donate: "/donate",
   project: "/project-1000-smiles",
 };
 
@@ -146,10 +146,10 @@ function Hero() {
           This is how we show up.
         </h1>
         <p className="ow-lead">
-          Right now, our work lives in two places:{" "}
-          <strong>Christmas in the Street</strong>, the flagship day we&rsquo;ve
-          run for three years and counting, and{" "}
-          <strong>Project 1,000 Smiles</strong>, the year-round commitment
+          Right now, our work comes down to two things.{" "}
+          <strong>Christmas in the Street</strong> is the flagship day
+          we&rsquo;ve run for three years and counting.{" "}
+          <strong>Project 1,000 Smiles</strong> is the year-round commitment
           we&rsquo;re building next.
         </p>
       </div>
@@ -165,7 +165,7 @@ function Teasers() {
           <div className="ow-teaser__photo">
             <img
               src={christmasPhoto}
-              alt="Children at a past Christmas on the Streets celebration"
+              alt="Children at a past Christmas in the Street celebration"
               loading="lazy"
             />
             <span className="ow-teaser__tag ow-teaser__tag--live">
@@ -176,8 +176,8 @@ function Teasers() {
             <h2>Christmas in the Street</h2>
             <p>
               A party for children, health checks for the adults who bring them,
-              and foodstuffs for widows and market women &mdash; every last
-              Saturday of December, three editions and counting.
+              and foodstuffs for widows and market women, every December, three
+              editions and counting.
             </p>
             <Link to={LINKS.christmas} className="ow-textlink">
               Explore Christmas in the Street{" "}
@@ -201,9 +201,9 @@ function Teasers() {
           <div className="ow-teaser__body">
             <h2>Project 1,000 Smiles</h2>
             <p>
-              Not a bigger one-day event &mdash; a year-round way to reach
-              children, mothers and communities in the months between one
-              December and the next.
+              Not a bigger one-day event, a year-round way to reach children,
+              mothers and communities in the months between one December and the
+              next.
             </p>
             <a href={LINKS.project} className="ow-textlink">
               Explore Project 1,000 smiles <LuArrowRight aria-hidden="true" />

@@ -11,7 +11,7 @@ export default function Impact() {
           <h2 className="h2">Real people. Real change.</h2>
           <p>
             Through your support, we&rsquo;re creating opportunities, nurturing
-            hope in children, and helping families and communities thrive.
+            hope in children and helping families and communities thrive.
           </p>
           <Button href="/impact" variant="outline-orange" arrow>
             View Our Impact

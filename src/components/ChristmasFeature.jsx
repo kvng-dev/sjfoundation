@@ -26,7 +26,7 @@ import { Doodle } from "./Doodles.jsx";
 
 import photo from "../assets/IMG-20260923-WA0149.jpg";
 
-const LINK = "/christmas-on-the-streets";
+const LINK = "/christmas-in-the-street";
 
 export default function ChristmasFeature() {
   return (
@@ -65,7 +65,8 @@ export default function ChristmasFeature() {
           <p className="cf-text">
             Every December, we throw a party for children, run health checks for
             the adults who bring them, and hand out foodstuffs to widows and
-            market women in the community. Edition 4 is this December 19.
+            market women & mothers in the community. Our next edition is
+            December 19.
           </p>
           <Link to={LINK} className="cf-btn">
             Explore Christmas In The Street <LuArrowRight aria-hidden="true" />

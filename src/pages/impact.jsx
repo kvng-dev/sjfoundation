@@ -73,9 +73,9 @@ const EDITIONS = [
 const LINKS = {
   getInvolved: "/get-involved",
   volunteer: "/get-involved#volunteer",
-  donate: "/get-involved#donate",
+  donate: "/donate",
   smiles: "/project-1000-smiles",
-  christmas: "/christmas-on-the-streets",
+  christmas: "/christmas-in-the-street",
 };
 
 /* ==========================================================================
@@ -154,9 +154,9 @@ function Hero() {
           <span className="im-accent">Three years of it.</span>
         </h1>
         <p className="im-lead">
-          We measure impact the way it actually happens: one Christmas on the
-          Streets at a time. Here&rsquo;s what three editions have added up to
-          so far.
+          We measure impact the way it actually happens: one Christmas in the
+          Street at a time. Here&rsquo;s what three editions have added up to so
+          far.
         </p>
       </div>
     </section>
@@ -286,14 +286,14 @@ function BeyondNumbers() {
           </p>
           <p className="im-p">
             And some of what we do was never going to show up in a count at all:
-            the people we met living on the streets who weren&rsquo;t on any
-            list, the 100-plus children at a mosque two days after Edition 3
+            the people we met living in the streets who weren&rsquo;t on any
+            list, the 100 plus children at a mosque two days after Edition 3
             ended, simply because the celebration didn&rsquo;t have to stop when
             the event did.
           </p>
           <p className="im-p im-p--quote">
             We believe impact is more than what we give. It is how we make
-            people feel, what possibilities we create, and what changes because
+            people feel, what possibilities we create and what changes because
             we showed up.
           </p>
         </Reveal>
