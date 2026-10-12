@@ -1,25 +1,4 @@
-// ChristmasFeature.jsx — flagship teaser for the HOME / landing page
-// ---------------------------------------------------------------------------
-// This is a HOME PAGE component (sits alongside Hero, About, FeaturedInitiative,
-// Impact — not the dedicated /christmas-on-the-streets page, which already
-// exists separately). Since Christmas on the Streets is the proven flagship
-// (unlike Project 1,000 Smiles, which is still "coming soon"), it gets its
-// own featured banner too — recommended placement is BEFORE
-// FeaturedInitiative, so the running programme is introduced before the
-// upcoming one:
-//
-//   <Hero />
-//   <StatsBand />
-//   <About />
-//   <ChristmasFeature />      <-- add this
-//   <FeaturedInitiative />
-//   <Impact />
-//   ...
-//
-// Self-contained (own scoped "cf-" styles + the shared <Doodle>), so it
-// doesn't depend on your global index.css matching any particular state.
-// Place at: src/components/ChristmasFeature.jsx
-// ---------------------------------------------------------------------------
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import { Doodle } from "./Doodles.jsx";
@@ -27,8 +6,35 @@ import { Doodle } from "./Doodles.jsx";
 import photo from "../assets/IMG-20260923-WA0149.jpg";
 
 const LINK = "/christmas-in-the-street";
+const TARGET_DATE = "2026-12-19T09:00:00+01:00";
+
+function getTimeLeft() {
+  const diff = Math.max(new Date(TARGET_DATE).getTime() - Date.now(), 0);
+  return {
+    total: diff,
+    days: Math.floor(diff / 86400000),
+    hours: Math.floor((diff / 3600000) % 24),
+    minutes: Math.floor((diff / 60000) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
+}
 
 export default function ChristmasFeature() {
+  const [time, setTime] = useState(getTimeLeft);
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(getTimeLeft()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const isLive = time.total <= 0;
+  const units = [
+    { label: "Days", value: time.days },
+    { label: "Hrs", value: time.hours },
+    { label: "Min", value: time.minutes },
+    { label: "Sec", value: time.seconds },
+  ];
+
   return (
     <section className="cf-section" aria-labelledby="cf-title">
       <style>{CSS}</style>
@@ -69,6 +75,27 @@ export default function ChristmasFeature() {
             edition, we return on 19 December 2026 to share hope, dignity and
             the joy of Christmas with our community.
           </p>
+
+          {/* Compact countdown */}
+          {!isLive ? (
+            <div
+              className="cf-count"
+              role="timer"
+              aria-label="Time until Edition 4 on 19 December 2026"
+            >
+              {units.map((u) => (
+                <div className="cf-count__unit" key={u.label}>
+                  <span className="cf-count__num">
+                    {String(u.value).padStart(2, "0")}
+                  </span>
+                  <span className="cf-count__label">{u.label}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="cf-live">Edition 4 is happening today! 🎉</p>
+          )}
+
           <Link to={LINK} className="cf-btn">
             Explore Christmas In The Street <LuArrowRight aria-hidden="true" />
           </Link>
@@ -97,7 +124,14 @@ const CSS = `
 .cf-eyebrow { margin: 0 0 10px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #ffb627; }
 .cf-title { margin: 0 0 8px; font-family: 'Newsreader', Georgia, 'Times New Roman', serif; font-size: clamp(2.1rem, 3.6vw, 3rem); font-weight: 500; line-height: 1.12; color: #fff; }
 .cf-sub { margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-size: 1.2rem; font-style: italic; color: rgba(255,255,255,.85); }
-.cf-text { margin: 0 0 28px; font-size: 1rem; line-height: 1.65; color: rgba(255,255,255,.88); max-width: 32rem; }
+.cf-text { margin: 0 0 22px; font-size: 1rem; line-height: 1.65; color: rgba(255,255,255,.88); max-width: 32rem; }
+
+/* Compact countdown */
+.cf-count { display: flex; gap: 8px; margin: 0 0 24px; }
+.cf-count__unit { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 56px; padding: 8px 10px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.28); border-radius: 12px; }
+.cf-count__num { font-family: 'Newsreader', Georgia, serif; font-size: 1.45rem; font-weight: 600; line-height: 1; color: #fff; font-variant-numeric: tabular-nums; }
+.cf-count__label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffb627; }
+.cf-live { margin: 0 0 24px; font-family: 'Newsreader', Georgia, serif; font-size: 1.15rem; font-style: italic; color: #ffb627; }
 
 .cf-btn { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.7rem; border: 2px solid #fff; border-radius: 999px; background: #fff; color: #c9500a; font-size: 0.92rem; font-weight: 700; text-decoration: none; transition: background-color 0.2s, transform 0.15s; }
 .cf-btn svg { width: 1.1em; height: 1.1em; }
@@ -106,5 +140,10 @@ const CSS = `
 @media (max-width: 860px) {
   .cf-section { grid-template-columns: 1fr; }
   .cf-photo { height: clamp(240px, 60vw, 360px); }
+}
+@media (max-width: 420px) {
+  .cf-count { gap: 6px; }
+  .cf-count__unit { flex: 1; min-width: 0; padding: 8px 4px; }
+  .cf-count__num { font-size: 1.25rem; }
 }
 `;

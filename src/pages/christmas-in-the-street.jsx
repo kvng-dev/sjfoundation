@@ -84,7 +84,7 @@ const PILLARS = [
   },
   {
     title: "Foodstuffs For Women",
-    text: "Raw foodstuffs handed directly to widows and market women in the community, starting with rice, growing every year since.",
+    text: "Raw foodstuffs handed directly to widows, mothers and market women in the community, starting with rice, growing every year since.",
     icon: LuHandHeart,
     tone: "mint",
   },
@@ -93,9 +93,9 @@ const PILLARS = [
 // Where the buttons go — Get Involved's page has matching #volunteer /
 // #donate anchors already.
 const LINKS = {
-  volunteer: "/get-involved#volunteer",
-  partner: "/get-involved#partner",
-  donate: "/get-involved#donate",
+  volunteer: "/get-involved",
+  partner: "/contact",
+  donate: "/donate",
   smiles: "/our-work#smiles",
   ourWork: "/our-work",
 };
@@ -176,10 +176,9 @@ function Hero() {
             Christmas in the Street
           </h1>
           <p className="cs-lead">
-            Every last Saturday of December, we close the year the way we think
-            it should end: a party for children, health checks for the adults
-            who bring them, and foodstuffs for the widows and market women in
-            the community.
+            Every December, we close the year the way we think it should end: a
+            party for children, health checks for the adults who bring them, and
+            foodstuffs for the widows and market women in the community.
           </p>
           <div className="cs-hero__facts">
             <span>3 editions run</span>
@@ -333,7 +332,7 @@ function HonestMoment() {
             turn some away disappointed.
           </p>
           <p className="cs-sticky__note">
-            That feeling, grateful for how many came, and aching for the ones we
+            That feeling, grateful for how many came and aching for the ones we
             couldn&rsquo;t fit is a big part of why{" "}
             <Link to={LINKS.smiles}>Project 1,000 Smiles</Link> exists: so reach
             doesn&rsquo;t have to wait for one Saturday in December.
@@ -354,7 +353,7 @@ function BeyondTheParty() {
       />
       <div className="cs-wrap">
         <Reveal>
-          <p className="cs-eyebrow">Edition 3, extended</p>
+          <p className="cs-eyebrow">Edition 3</p>
           <h2 id="cs-beyond-title" className="cs-h2">
             Beyond the party.
           </h2>
@@ -369,10 +368,11 @@ function BeyondTheParty() {
                 loading="lazy"
               />
             </figure>
-            <h3>Into the streets</h3>
+            <h3>The joy of being remembered</h3>
             <p>
-              That same edition, our team went out to meet people living on the
-              streets in the community, so they didn&rsquo;t get missed either.
+              Every child left with a gift in hand and a reason to smile. Santa
+              made sure no one went home empty-handed, and no child felt
+              forgotten.
             </p>
           </Reveal>
 
@@ -384,11 +384,11 @@ function BeyondTheParty() {
                 loading="lazy"
               />
             </figure>
-            <h3>Two days later, a mosque</h3>
+            <h3>Smiles all around</h3>
             <p>
-              We returned to gift over 100 children at a mosque in the same
-              community because the celebration didn&rsquo;t have to stop when
-              the event did.
+              Santa had a gift and a kind word for every child who came to see
+              him. There were hugs, laughter and big bright smiles, because on
+              this day, every child was welcome and every child was celebrated.
             </p>
           </Reveal>
         </div>

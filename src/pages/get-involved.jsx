@@ -318,7 +318,7 @@ function Donate() {
         </ul>
 
         <Reveal className="gi-donate__cta">
-          <Link href="/donate" className="gi-btn gi-btn--primary">
+          <Link to="/donate" className="gi-btn gi-btn--primary">
             <LuHeart aria-hidden="true" /> Donate Now
           </Link>
           <p

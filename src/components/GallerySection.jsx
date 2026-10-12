@@ -35,9 +35,9 @@ import photo4 from "../assets/IMG-20251230-WA0091.jpg";
 import photo5 from "../assets/DSC_8337.JPG";
 import photo6 from "../assets/DSC_9152.JPG";
 import photo7 from "../assets/DSC_8776.JPG";
-import photo8 from "../assets/IMG-20251230-WA0161.jpg";
+import photo8 from "../assets/smiles-all-round.jpeg";
 import photo9 from "../assets/IMG-20260923-WA0116.jpg";
-import photo10 from "../assets/IMG-20260923-WA0143.jpg";
+import photo10 from "../assets/behind-the-scene.jpeg";
 
 const PHOTOS = [
   {
@@ -63,7 +63,7 @@ const PHOTOS = [
   {
     src: photo6,
     alt: "Games and laughter at the party",
-    caption: "Games & laughter",
+    caption: "Mothers & children after receiving their, smiling together",
   },
   {
     src: photo7,
