@@ -25,7 +25,7 @@ import metroLogo from "../assets/logos/metro.jpeg";
 import ravenshrLogo from "../assets/logos/ravenshr.jpeg";
 import hobLogo from "../assets/logos/hob.jpeg";
 import runalpha from "../assets/logos/runalpha.png";
-import sevenLogo from "../assets/logos/24seven.png";
+import sevenLogo from "../assets/logos/24Seven.png";
 import chiefolu from "../assets/logos/chiefolu.jpeg";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
