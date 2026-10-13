@@ -41,7 +41,7 @@ import { Doodle } from "../components/Doodles.jsx";
    EDITABLE CONTENT — fill these in
    ========================================================================== */
 
-const CONTACT_EMAIL = "sanusijafarfoundation@gmail.com";
+const CONTACT_EMAIL = "info@sanusijafarfoundation.org";
 
 // Placeholders — replace with your real details. Leave the brackets in place
 // if a field isn't ready yet; never publish a guessed account number.

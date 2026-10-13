@@ -8,7 +8,7 @@
 // There's no backend/form service or payment link wired up on this site yet,
 // so:
 //  - Volunteer and Partner buttons open a pre-filled mailto: using the same
-//    address already in your Footer (sanusijafarfoundation@gmail.com). These
+//    address already in your Footer (info@sanusijafarfoundation.org). These
 //    work today, no setup needed.
 //  - Donate is clearly marked as a placeholder — swap DONATE_HREF for a real
 //    payment link (Paystack/Flutterwave/etc.) or bank-transfer details
@@ -38,7 +38,7 @@ import { Doodle } from "../components/Doodles.jsx";
    EDITABLE CONTENT
    ========================================================================== */
 
-const CONTACT_EMAIL = "sanusijafarfoundation@gmail.com";
+const CONTACT_EMAIL = "info@sanusijafarfoundation.org";
 
 const mailto = (subject, body) =>
   `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
