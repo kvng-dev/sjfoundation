@@ -49,7 +49,11 @@ const SOCIALS = [
     icon: FaInstagram,
   },
   { label: "LinkedIn", href: "#", icon: FaLinkedinIn },
-  { label: "Facebook", href: "#", icon: FaFacebookF },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1Bu62Em5P4/?mibextid=wwXIfr",
+    icon: FaFacebookF,
+  },
   {
     label: "TikTok",
     href: "https://www.tiktok.com/@sanusijafarfoundation?_r=1&_t=ZS-9A05NRww5c9",

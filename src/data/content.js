@@ -25,6 +25,8 @@ import metroLogo from "../assets/logos/metro.jpeg";
 import ravenshrLogo from "../assets/logos/ravenshr.jpeg";
 import hobLogo from "../assets/logos/hob.jpeg";
 import runalpha from "../assets/logos/runalpha.png";
+import sevenLogo from "../assets/logos/24seven.png";
+import chiefolu from "../assets/logos/chiefolu.jpeg";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 // Nav links point at sections on the landing page for now.
@@ -158,6 +160,8 @@ export const partners = [
   { name: "RavensHR", logo: ravenshrLogo },
   { name: "HOB", logo: hobLogo },
   { name: "RunAlpha", logo: runalpha },
+  { name: "24seven", logo: sevenLogo },
+  { name: "Chief Olu lawanson", logo: chiefolu },
 ];
 
 export const footerLinks = [
@@ -184,7 +188,11 @@ export const socials = [
     icon: FaInstagram,
   },
   { label: "LinkedIn", href: "#", key: "linkedin", icon: LuLinkedin },
-  { label: "Facebook", href: "#", key: "facebook" },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1Bu62Em5P4/?mibextid=wwXIfr",
+    key: "facebook",
+  },
   {
     label: "Tiktok",
     href: "https://www.tiktok.com/@sanusijafarfoundation?_r=1&_t=ZS-9A05NRww5c9",
