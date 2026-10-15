@@ -44,14 +44,14 @@ export const heroStats = [
   { value: "1,354+", label: "Children Reached" },
   { value: "273+", label: "Women Reached" },
   { value: "4", label: "Core areas of impact" },
-  { value: "1", label: "Community at a Time" },
+  { value: "3", label: "Editions of Christmas in the Street" },
 ];
 
 export const impactStats = [
   { value: "1,354+", label: "Children Reached", icon: LuBaby },
   { value: "273+", label: "Women Reached", icon: LuFlower2 },
   { value: "1,000", label: "Smiles We're Building Towards", icon: LuSparkles },
-  { value: "1", label: "Community at a Time", icon: LuMapPin },
+  { value: "3", label: "One Community at a Time", icon: LuMapPin },
 ];
 
 export const focusAreas = [
@@ -187,7 +187,12 @@ export const socials = [
     key: "instagram",
     icon: FaInstagram,
   },
-  { label: "LinkedIn", href: "#", key: "linkedin", icon: LuLinkedin },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/sanusi-jafar-foundation/",
+    key: "linkedin",
+    icon: LuLinkedin,
+  },
   {
     label: "Facebook",
     href: "https://www.facebook.com/share/1Bu62Em5P4/?mibextid=wwXIfr",

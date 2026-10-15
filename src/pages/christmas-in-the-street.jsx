@@ -37,6 +37,7 @@ import streetPhoto from "../assets/IMG-20260923-WA0067.jpg";
 import mosquePhoto from "../assets/IMG-20251230-WA0012.jpg";
 import CountdownSection from "../components/CountdownSection.jsx";
 import GallerySection from "../components/GallerySection.jsx";
+import SEO, { orgSchema } from "../components/seo.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT
@@ -72,7 +73,7 @@ const EDITIONS = [
 const PILLARS = [
   {
     title: "Kids' Christmas Party",
-    text: "A full party thrown for children in the community,  games, food, gifts and the kind of afternoon that becomes a memory.",
+    text: "A full party thrown for children in the community:  games, food, gifts and the kind of afternoon that becomes a memory.",
     icon: LuGift,
     tone: "peach",
   },
@@ -333,7 +334,7 @@ function HonestMoment() {
           </p>
           <p className="cs-sticky__note">
             That feeling, grateful for how many came and aching for the ones we
-            couldn&rsquo;t fit is a big part of why{" "}
+            couldn&rsquo;t fit, is a big part of why{" "}
             <Link to={LINKS.smiles}>Project 1,000 Smiles</Link> exists: so reach
             doesn&rsquo;t have to wait for one Saturday in December.
           </p>
@@ -438,12 +439,15 @@ function EditionFour() {
    ========================================================================== */
 
 export default function ChristmasInTheStreet() {
-  useEffect(() => {
-    document.title = "Christmas in the Street | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="cs-page">
+      <SEO
+        title="Christmas in the Street | Sanusi Jafar Foundation"
+        description="Discover Christmas in the Street by Sanusi Jafar Foundation, an initiative bringing joy, hope, and a sense of belonging to children and vulnerable families in underserved communities."
+        path="/christmas-in-the-street"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <WhatItIs />

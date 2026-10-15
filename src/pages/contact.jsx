@@ -36,6 +36,7 @@ import {
 } from "react-icons/fa6";
 import { Doodle } from "../components/Doodles.jsx";
 import { contact } from "../data/content.js";
+import SEO, { orgSchema } from "../components/seo.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT — same details already used in your Footer
@@ -48,7 +49,11 @@ const SOCIALS = [
     href: "https://www.instagram.com/sanusijafarfoundation?stkn=MXdzY2s2anQ0MDMzNw%3D%3D&utm_source=qr",
     icon: FaInstagram,
   },
-  { label: "LinkedIn", href: "#", icon: FaLinkedinIn },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/sanusi-jafar-foundation",
+    icon: FaLinkedinIn,
+  },
   {
     label: "Facebook",
     href: "https://www.facebook.com/share/1Bu62Em5P4/?mibextid=wwXIfr",
@@ -84,7 +89,7 @@ const REDIRECTS = [
   },
   {
     title: "Ready to give?",
-    text: "Support Us Your Way. Prefer to donate directly? See how to give and how to contact us below.",
+    text: "Support Us Your Way. Prefer to donate directly? See all the ways to give.",
     cta: "Go to Donate",
     href: "/donate",
     icon: LuHeart,
@@ -375,12 +380,15 @@ function Redirects() {
    ========================================================================== */
 
 export default function Contact() {
-  useEffect(() => {
-    document.title = "Contact | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="ct-page">
+      <SEO
+        title="Contact Us | Sanusi Jafar Foundation"
+        description="Get in touch with Sanusi Jafar Foundation to learn about our initiatives, seek support, explore partnerships, or discover how you can help restore hope, dignity and belonging."
+        path="/contact"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <ContactDetails />

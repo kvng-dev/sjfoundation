@@ -9,10 +9,15 @@ import Layout from "./components/Layout.jsx";
 import Donate from "./pages/donate.jsx";
 import Project1000Ssmiles from "./pages/project-1000-smiles.jsx";
 import ChristmasInTheStreet from "./pages/christmas-in-the-street.jsx";
+import NotFound from "./pages/NotFound.jsx";
+import RouteTracker from "./components/RouteTracker.jsx";
+import ConsentBanner from "./components/ConsentBanner.jsx";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <RouteTracker />
+      <ConsentBanner />
       <Routes>
         <Route element={<Layout />}>
           {/* Landing page */}
@@ -30,6 +35,7 @@ export default function App() {
           <Route path="/get-involved" element={<GetInvolvedPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

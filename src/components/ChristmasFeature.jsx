@@ -42,7 +42,7 @@ export default function ChristmasFeature() {
       <div className="cf-photo">
         <img
           src={photo}
-          alt="Children at a past Christmas on the Streets celebration"
+          alt="Children at a past Christmas in the Street celebration"
           loading="lazy"
         />
         <span className="cf-badge">Edition 4 · Dec 19</span>

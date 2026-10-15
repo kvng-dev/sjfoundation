@@ -31,6 +31,7 @@ import { Doodle } from "../components/Doodles.jsx";
 // you have them, same import paths your other pages already use.
 import heroPhoto from "../assets/IMG_3112.JPG.jpeg";
 import beyondPhoto from "../assets/IMG-20251230-WA0133.jpg";
+import SEO, { orgSchema } from "../components/seo.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT
@@ -276,12 +277,12 @@ function BeyondNumbers() {
           </h2>
           <p className="im-p">
             1,354 children is a number. A child finding out Santa remembered
-            them even though there were 150 of them that first year that&rsquo;s
-            not a number, that&rsquo;s a memory they&rsquo;ll keep.
+            them, even though there were 150 of them that first year;
+            that&rsquo;s not a number. That&rsquo;s a memory they&rsquo;ll keep.
           </p>
           <p className="im-p">
             273 mothers, market women and widows is a number. One less month of
-            choosing between rent and rice that&rsquo;s what the number is
+            choosing between rent and rice. That&rsquo;s what the number is
             actually made of.
           </p>
           <p className="im-p">
@@ -407,12 +408,15 @@ function ClosingCta() {
    ========================================================================== */
 
 export default function Impact() {
-  useEffect(() => {
-    document.title = "Impact | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="im-page">
+      <SEO
+        title="Our Impact | Sanusi Jafar Foundation"
+        description="Explore the impact of Sanusi Jafar Foundation through our work supporting children, women, young people, and vulnerable families in underserved communities. Discover our progress, achievements, and future goals."
+        path="/impact"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <HeadlineStats />

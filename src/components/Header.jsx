@@ -51,7 +51,7 @@ export default function Header() {
 
         <Link to="/donate" className="btn btn--primary btn--sm header__donate">
           <LuHeart aria-hidden="true" />
-          Donate
+          <span className="header__donate-text">Donate</span>
         </Link>
 
         <button

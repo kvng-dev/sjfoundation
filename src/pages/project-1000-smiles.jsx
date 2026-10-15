@@ -35,6 +35,7 @@ import { Doodle } from "../components/Doodles.jsx";
 // Reusing existing site photos as placeholders — swap when you have real ones.
 import heroPhoto from "../assets/IMG_3127.JPG.jpeg";
 import whyPhoto from "../assets/IMG_3119.JPG.jpeg";
+import SEO, { orgSchema } from "../components/seo.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT
@@ -82,7 +83,7 @@ const STATUS_STEPS = [
   {
     state: "done",
     label: "Where it started",
-    title: "Three editions of Christmas on the Streets",
+    title: "Three editions of Christmas in the Street",
     text: "They showed us what one Saturday can do and what it can’t.",
   },
   {
@@ -105,7 +106,7 @@ const FAQ = [
     a: "Not yet. We’re preparing to launch, and we’d rather tell you that plainly than promise something that isn’t ready. When it is, you’ll hear it from us first.",
   },
   {
-    q: "Does Christmas on the Streets continue?",
+    q: "Does Christmas in the Street continue?",
     a: "Yes. Edition 4 is on Saturday, December 19, 2026. Project 1,000 Smiles is built to sit alongside it, carrying the same spirit through the rest of the year.",
   },
   {
@@ -119,9 +120,9 @@ const FAQ = [
 ];
 
 const LINKS = {
-  christmas: "/christmas-on-the-streets",
-  volunteer: "/get-involved#volunteer",
-  partner: "/get-involved#partner",
+  christmas: "/christmas-in-the-street",
+  volunteer: "/get-involved",
+  partner: "/contact",
   donate: "/donate",
 };
 
@@ -202,8 +203,8 @@ function Hero() {
           </h1>
           <p className="ps-sub">More than a number. A commitment.</p>
           <p className="ps-lead">
-            A year-round community impact initiative in the making &mdash; built
-            to carry the hope and belonging we bring every December into every
+            A year-round community impact initiative in the making, built to
+            carry the hope and belonging we bring every December into every
             month of the year, for children, mothers and communities.
           </p>
           <div className="ps-actions">
@@ -252,10 +253,10 @@ function Why() {
             One Saturday was never going to be enough.
           </h2>
           <p className="ps-p">
-            Christmas on the Streets began with 50 children planned and 150 who
+            Christmas in the Street began with 50 children planned and 150 who
             came. By Edition 3 it was 754. Every year more children showed up
-            &mdash; and every year we felt how much a single day in December
-            can&rsquo;t hold.
+            and every year we felt how much a single day in December can&rsquo;t
+            hold.
           </p>
           <p className="ps-p">
             We don&rsquo;t believe people should only be remembered when there
@@ -263,7 +264,7 @@ function Why() {
             how we plan to keep showing up.
           </p>
           <Link to={LINKS.christmas} className="ps-textlink">
-            Read the Christmas on the Streets story{" "}
+            Read the Christmas in the Street story{" "}
             <LuArrowRight aria-hidden="true" />
           </Link>
         </Reveal>
@@ -479,12 +480,15 @@ function ClosingCta() {
    ========================================================================== */
 
 export default function ProjectSmiles() {
-  useEffect(() => {
-    document.title = "Project 1,000 Smiles | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="ps-page">
+      <SEO
+        title="Project 1,000 Smiles | Sanusi Jafar Foundation"
+        description="Discover Project 1,000 Smiles by Sanusi Jafar Foundation, an initiative dedicated to bringing joy, hope, and meaningful support to children and vulnerable families in underserved communities."
+        path="/project-1000-smiles"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <Why />

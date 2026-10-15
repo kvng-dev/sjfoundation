@@ -24,7 +24,7 @@ import {
 } from "react-icons/lu";
 
 import heroPhoto from "../assets/IMG_3115.JPG.jpeg";
-import aboutPhoto from "../assets/IMG_3114.JPG.jpeg";
+import hoit from "../assets/kingsley.jpeg";
 import story1 from "../assets/IMG_3139.JPG.jpeg";
 import story2 from "../assets/IMG_3124.JPG.jpeg";
 import story3 from "../assets/IMG_3123.JPG.jpeg";
@@ -35,6 +35,8 @@ import project1k from "../assets/IMG_3137.JPG.jpeg";
 import collage1 from "../assets/IMG_3136.JPG.jpeg";
 import collage2 from "../assets/brothers.jpeg";
 import collage3 from "../assets/IMG_3283.JPG.jpeg";
+import team from "../assets/IMG-20260208-WA0016.jpg";
+import SEO, { orgSchema } from "../components/seo";
 
 /* ==========================================================================
    EASY-EDIT SETTINGS
@@ -48,7 +50,7 @@ const FOUNDER_IMG = founderImg || null;
 const FOUNDER = {
   role: "Our Founder",
   name: "Olatunji Sanusi",
-  alt: "Sanusi Jafar, founder of the Sanusi Jafar Foundation",
+  alt: "Founder of the Sanusi Jafar Foundation",
 };
 
 // Every photo on the page, in one place. All are placeholders taken from the
@@ -245,6 +247,39 @@ function Doodle({ name, className = "", style, fill = "none" }) {
     </svg>
   );
 }
+
+const TRUSTEES = [
+  {
+    name: "Kingsley Oghuanlan",
+    role: "Head of IT. Oversees technology, digital systems, and IT infrastructure.",
+    img: hoit,
+    tone: "peach",
+  },
+  {
+    name: "Jeff Arome",
+    role: "Community Mobilization Leader. Leads community engagement, outreach, and mobilization efforts.",
+    img: null,
+    tone: "mint",
+  },
+  {
+    name: "Korede James",
+    role: "Operations Coordinator. Coordinates activities, supports team collaboration, and ensures smooth day-to-day operations.",
+    img: null,
+    tone: "sky",
+  },
+  {
+    name: "Deji Banks",
+    role: "Head of Security. Oversees safety, security measures, and the protection of people and property.",
+    img: null,
+    tone: "blush",
+  },
+];
+
+const VOLUNTEERS = {
+  src: team, // set to volunteersImg once imported
+  alt: "The Sanusi Jafar Foundation volunteer team at a past edition",
+  caption: "Our volunteers, REPLACE: edition name and year",
+};
 
 /* ==========================================================================
    SMALL HELPERS
@@ -684,7 +719,7 @@ function WhyWeExist() {
             Why we exist
           </h2>
           <p className="ab-lead ab-lead--dark">
-            Today, the Sanusi Jafar Foundation is a grassroots nonprofit
+            Today, the Sanusi Jafar Foundation is a grassroots non-profit
             committed to restoring hope, dignity and belonging for children,
             women, young people and vulnerable families in underserved
             communities.
@@ -1071,6 +1106,102 @@ function Beliefs() {
   );
 }
 
+function TrusteePlaceholder() {
+  return (
+    <svg
+      className="ab-tpl"
+      viewBox="0 0 300 375"
+      role="img"
+      aria-label="Trustee photo placeholder"
+    >
+      <rect width="300" height="375" fill="#ffe9d6" />
+      <circle cx="150" cy="148" r="58" fill="#ff741f" />
+      <path d="M40 375c0-78 48-118 110-118s110 40 110 118z" fill="#052436" />
+    </svg>
+  );
+}
+
+function WhoWeAre() {
+  return (
+    <section className="ab-sec ab-who" aria-labelledby="ab-who-title">
+      <Doodle
+        name="dots"
+        className="ab-abs ab-edge ab-c-line"
+        style={{ top: "3%", right: "3%", width: 90 }}
+      />
+      <Doodle
+        name="sparkle"
+        fill="currentColor"
+        className="ab-abs ab-edge ab-float ab-c-sun"
+        style={{ bottom: "6%", left: "3%", width: 40 }}
+      />
+
+      <div className="ab-wrap">
+        <Reveal className="ab-who__intro">
+          <h2 id="ab-who-title" className="ab-h2">
+            Who we are
+          </h2>
+          <p className="ab-lead ab-lead--dark">
+            The Sanusi Jafar Foundation is guided by a board of trustees and
+            carried out in the community by volunteers.
+          </p>
+          <p className="ab-label">Our trustees</p>
+        </Reveal>
+
+        <ul className="ab-trustees">
+          {TRUSTEES.map(({ name, role, img, tape, tilt }, i) => (
+            <li key={`${name}-${i}`}>
+              <Reveal delay={i * 90}>
+                <Polaroid
+                  tilt={tilt}
+                  ratio="4 / 5"
+                  tape={tape}
+                  caption={
+                    <>
+                      <span className="ab-tcap__name">{name}</span>
+                      <span className="ab-tcap__role">{role}</span>
+                    </>
+                  }
+                >
+                  {img ? (
+                    <img src={img} alt={name} loading="lazy" />
+                  ) : (
+                    <TrusteePlaceholder />
+                  )}
+                </Polaroid>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+
+        <Reveal className="ab-vol">
+          <figure className="ab-vol__frame">
+            <Doodle
+              name="sun"
+              className="ab-abs ab-spin ab-c-sun"
+              style={{ top: -30, left: 24, width: 70, zIndex: 2 }}
+            />
+            {VOLUNTEERS.src ? (
+              <img src={VOLUNTEERS.src} alt={VOLUNTEERS.alt} loading="lazy" />
+            ) : (
+              <div
+                className="ab-vol__ph"
+                role="img"
+                aria-label={VOLUNTEERS.alt}
+              >
+                <span>Volunteer team photo coming soon</span>
+              </div>
+            )}
+            <figcaption className="ab-vol__cap">
+              {VOLUNTEERS.caption}
+            </figcaption>
+          </figure>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function ProjectTeaser() {
   return (
     <section className="ab-sec ab-project" aria-labelledby="ab-project-title">
@@ -1301,16 +1432,20 @@ function ClosingCta() {
    ========================================================================== */
 
 export default function About() {
-  useEffect(() => {
-    document.title = "About Us | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="ab-page">
+      <SEO
+        title="About Us | Sanusi Jafar Foundation"
+        description="Learn about Sanusi Jafar Foundation, our story, mission, vision, and commitment to restoring hope, dignity and belonging for children, women, young people, and vulnerable families in underserved communities."
+        path="/about"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <Story />
       <WideBand />
+      <WhoWeAre />
       <WhyWeExist />
       <PolaroidStrip />
       <Essence />
@@ -1619,6 +1754,23 @@ const CSS = `
 .ab-cta__box { position: relative; padding: clamp(32px, 5vw, 60px) 24px; background: #fff; border: 2px solid var(--ab-ink); border-radius: 30px; box-shadow: 8px 10px 0 var(--ab-ink); text-align: center; overflow: hidden; }
 .ab-cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 22px; }
 
+/* ---- WHO WE ARE ---- */
+.ab-who { background: #fcfcfa; overflow: hidden; }
+.ab-trustees { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px 26px; margin-top: 30px !important; }
+.ab-trustees .ab-pol { max-width: 280px; margin-inline: auto; }
+.ab-tpl { display: block; }
+.ab-tcap__name { display: block; font-family: var(--ab-script); font-size: 1.6rem; font-weight: 700; line-height: 1.15; color: var(--ab-ink); }
+.ab-tcap__role { display: block; margin-top: 2px; font-family: var(--ab-sans); font-size: 0.85rem; font-weight: 600; line-height: 1.4; color: var(--ab-oi); }
+
+.ab-vol { margin-top: clamp(56px, 7vw, 96px); }
+.ab-vol__frame { position: relative; }
+.ab-vol__frame img, .ab-vol__ph { width: 100%; height: clamp(240px, 38vw, 480px); object-fit: cover; border: 6px solid #fff; border-radius: 28px; box-shadow: 0 26px 44px -26px rgba(5, 36, 54, 0.55), 6px 8px 0 var(--ab-o); transform: rotate(0.6deg); }
+.ab-vol__ph { display: grid; place-items: center; background: var(--ab-peach); font-family: var(--ab-script); font-size: 1.8rem; font-weight: 600; color: var(--ab-oi); text-align: center; padding: 20px; }
+.ab-vol__cap { position: absolute; right: clamp(14px, 4vw, 48px); bottom: -22px; max-width: 80%; padding: 6px 22px 8px; background: var(--ab-sun); border: 2px solid var(--ab-ink); border-radius: 6px; font-family: var(--ab-script); font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 600; line-height: 1.2; color: var(--ab-ink); transform: rotate(1.5deg); box-shadow: 3px 4px 0 var(--ab-ink); }
+
+@media (max-width: 1024px) { .ab-trustees { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .ab-trustees { grid-template-columns: 1fr; } }
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 1024px) {
   .ab-focus { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1643,4 +1795,7 @@ const CSS = `
   .ab-badge { width: 92px; height: 92px; right: -4px; }
   .ab-badge b { font-size: 1.45rem; }
 }
+`;
+const WHO_WE_ARE_CSS = `
+
 `;

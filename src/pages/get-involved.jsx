@@ -33,12 +33,18 @@ import {
   LuUsers,
 } from "react-icons/lu";
 import { Doodle } from "../components/Doodles.jsx";
+import SEO, { orgSchema } from "../components/seo.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT
    ========================================================================== */
 
 const CONTACT_EMAIL = "info@sanusijafarfoundation.org";
+
+const WHATSAPP_NUMBER = "2347070056736";
+
+const whatsapp = (text) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
 const mailto = (subject, body) =>
   `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
@@ -98,10 +104,17 @@ const LINKS = {
     "Keep me posted on Project 1,000 Smiles",
     "Hi Sanusi Jafar Foundation,\n\nPlease keep me posted as Project 1,000 Smiles gets closer to launching.\n\nThanks!"
   ),
-  whatsapp:
-    "https://wa.me/2347070056736?text=Hello%2C%20we%27d%20like%20to%20partner%20with%20you",
-  christmas: "/christmas-on-the-streets",
+  // whatsapp:
+  //   "https://wa.me/2347070056736?text=Hello%2C%20we%27d%20like%20to%20partner%20with%20you",
+  // christmas: "/christmas-in-the-street",
   smilesPage: "/our-work#smiles",
+  volunteerWhatsapp: whatsapp(
+    "Hello Sanusi Jafar Foundation, I'd like to volunteer for Christmas in the Street (Edition 4). How can I help?"
+  ),
+  smilesWhatsapp: whatsapp(
+    "Hello Sanusi Jafar Foundation, please keep me posted on Project 1,000 Smiles."
+  ),
+  whatsapp: whatsapp("Hello, we'd like to partner with you"),
 };
 
 /* ==========================================================================
@@ -180,7 +193,7 @@ function Hero() {
         </h1>
         <p className="gi-lead">
           Whether you have a Saturday in December, a network to connect us with,
-          or a gift to give. there&rsquo;s a place for you here.
+          or a gift to give, there&rsquo;s a place for you here.
         </p>
 
         <nav className="gi-jump" aria-label="Jump to a section">
@@ -216,9 +229,19 @@ function Volunteer() {
             Christmas in the Street runs on volunteers. Here&rsquo;s where hands
             are needed this year:
           </p>
-          <a href={LINKS.volunteerMailto} className="gi-btn gi-btn--primary">
-            <LuMail aria-hidden="true" /> Email Us To Volunteer
-          </a>
+          <div className="gi-actions">
+            <a
+              href={LINKS.volunteerWhatsapp}
+              className="gi-btn gi-btn--primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LuMessageCircle aria-hidden="true" /> Volunteer On WhatsApp
+            </a>
+            <a href={LINKS.volunteerMailto} className="gi-btn gi-btn--outline">
+              <LuMail aria-hidden="true" /> Email Us Instead
+            </a>
+          </div>
         </Reveal>
 
         <Reveal delay={100}>
@@ -260,23 +283,22 @@ function Partner() {
           </h2>
           <p>
             Businesses, community groups and organisations help us reach further
-            sponsoring supplies, lending a venue, or joining hands on the day
+            by sponsoring supplies, lending a venue, or joining hands on the day
             itself. If that sounds like you, we&rsquo;d love to talk.
           </p>
-          <a href={LINKS.partnerMailto} className="gi-btn gi-btn--white">
-            <LuHandshake aria-hidden="true" /> Start A Conversation
-          </a>
-          <a
-            href={LINKS.whatsapp}
-            style={{
-              marginLeft: "12px",
-            }}
-            className="gi-btn gi-btn--white"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LuMessageCircle aria-hidden="true" /> Chat Us On WhatsApp
-          </a>
+          <div className="gi-actions">
+            <a href={LINKS.partnerMailto} className="gi-btn gi-btn--white">
+              <LuHandshake aria-hidden="true" /> Start A Conversation
+            </a>
+            <a
+              href={LINKS.whatsapp}
+              className="gi-btn gi-btn--white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LuMessageCircle aria-hidden="true" /> Chat Us On WhatsApp
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>
@@ -327,7 +349,7 @@ function Donate() {
             }}
             className="gi-donate__note"
           >
-            We&rsquo;ll get back to you with the best way to give.
+            Give by bank transfer in under a minute
           </p>
         </Reveal>
       </div>
@@ -363,8 +385,16 @@ function SmilesEarly() {
             to be part of it from day one, not just once it&rsquo;s running.
           </p>
           <div className="gi-smiles__actions">
-            <a href={LINKS.smilesMailto} className="gi-btn gi-btn--primary">
-              <LuMail aria-hidden="true" /> Keep Me Posted
+            <a
+              href={LINKS.smilesWhatsapp}
+              className="gi-btn gi-btn--primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LuMessageCircle aria-hidden="true" /> Keep Me Posted On WhatsApp
+            </a>
+            <a href={LINKS.smilesMailto} className="gi-btn gi-btn--outline">
+              <LuMail aria-hidden="true" /> Email Instead
             </a>
             <Link to={LINKS.smilesPage} className="gi-btn gi-btn--outline">
               Learn More <LuArrowRight aria-hidden="true" />
@@ -381,12 +411,15 @@ function SmilesEarly() {
    ========================================================================== */
 
 export default function GetInvolved() {
-  useEffect(() => {
-    document.title = "Get Involved | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="gi-page">
+      <SEO
+        title="Get Involved | Sanusi Jafar Foundation"
+        description="Get involved with Sanusi Jafar Foundation by volunteering, partnering with us, or donating to support children, women, young people, and vulnerable families in underserved communities."
+        path="/get-involved"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <Volunteer />
@@ -467,6 +500,7 @@ const CSS = `
 .gi-partner__icon { display: inline-grid; place-items: center; width: 56px; height: 56px; margin-bottom: 18px; background: rgba(255,255,255,.16); border: 2px solid rgba(255,255,255,.5); border-radius: 50%; color: #fff; }
 .gi-partner__icon svg { width: 26px; height: 26px; }
 .gi-partner p { max-width: 34rem; font-size: 1.02rem; line-height: 1.7; color: rgba(255,255,255,.92); margin-bottom: 26px; }
+.gi-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
 /* ---- Donate ---- */
 .gi-donate { background: var(--cream); background-image: radial-gradient(rgba(255,116,31,.14) 1.5px, transparent 1.6px); background-size: 28px 28px; overflow: hidden; }
@@ -501,5 +535,7 @@ const CSS = `
   .gi-give { grid-template-columns: 1fr; }
   .gi-jump { flex-direction: column; align-items: flex-start; }
   .gi-jump a { width: 100%; text-align: center; }
+  .gi-actions .gi-btn,
+  .gi-smiles__actions .gi-btn { width: 100%; }
 }
 `;

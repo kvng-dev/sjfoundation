@@ -369,10 +369,13 @@ a {
 @media (max-width: 1120px) {
   .header__toggle {
     display: inline-grid;
-    margin-left: auto;
+    margin-left: 10px;
   }
   .header__donate {
-    display: none;
+    display: inline-flex;
+    margin-left: auto; /* pushes donate + toggle to the right */
+    padding: 8px 14px;
+    font-size: 0.85rem;
   }
   .nav {
     position: absolute;
@@ -404,8 +407,19 @@ a {
     display: none;
   }
   .nav__donate-mobile {
-    display: inline-flex;
-    margin-top: 18px;
+    display: none;
+    /* margin-top: 18px; */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Very small phones: shrink it so the logo doesn't get squeezed */
+  .header__donate {
+    padding: 9px;
+    border-radius: 50%;
+  }
+  .header__donate-text {
+    display: none;
   }
 }
 

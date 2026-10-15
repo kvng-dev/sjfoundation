@@ -50,7 +50,7 @@ const PHOTOS = [
   {
     src: photo3,
     alt: "A child at Edition 3",
-    caption: "Kids showing their catwalks",
+    caption: "Kids on the catwalks",
   },
   { src: photo4, alt: "Street outreach", caption: "Volunteers" },
   {
@@ -63,12 +63,12 @@ const PHOTOS = [
   {
     src: photo6,
     alt: "Games and laughter at the party",
-    caption: "Mothers & children after receiving their, smiling together",
+    caption: "Mothers and children after receiving their gifts",
   },
   {
     src: photo7,
     alt: "A mother and daughter at the event",
-    caption: "Santa klaus & kids",
+    caption: "Santa klaus and the kids",
   },
   {
     src: photo8,
@@ -159,6 +159,9 @@ export default function GallerySection() {
             </li>
           ))}
         </ul>
+        <p style={{ fontSize: "0.8rem", marginTop: "1rem", color: "#555" }}>
+          <em>Photos are shared with the consent of parents and guardians.</em>
+        </p>
       </div>
 
       {isOpen && (
@@ -239,7 +242,7 @@ const CSS = `
 .gl-thumb { position: relative; display: block; width: 100%; height: 100%; padding: 0; border: 2px solid #0b2233; border-radius: 16px; background: #fff; overflow: hidden; cursor: pointer; box-shadow: 3px 4px 0 #0b2233; transition: transform 0.15s, box-shadow 0.15s; }
 .gl-thumb:hover { transform: translate(-2px, -2px); box-shadow: 5px 6px 0 #0b2233; }
 .gl-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gl-thumb__cap { position: absolute; left: 10px; bottom: 10px; padding: 0.3em 0.75em; background: rgba(11,34,51,.82); border-radius: 999px; color: #fff; font-size: 0.72rem; font-weight: 700; }
+.gl-thumb__cap { position: absolute; left: 10px; bottom: 10px; padding: 0.3em 0.75em; background: rgba(11,34,51,.82); border-radius: 999px; color: #fff; font-size: 0.65rem; font-weight: 700; }
 
 .gl-lightbox { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; }
 .gl-lightbox__backdrop { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: rgba(5,36,54,.92); cursor: pointer; }

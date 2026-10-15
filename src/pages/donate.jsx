@@ -36,6 +36,8 @@ import {
   LuPackage,
 } from "react-icons/lu";
 import { Doodle } from "../components/Doodles.jsx";
+import SEO, { orgSchema } from "../components/seo.jsx";
+import { trackCta, trackDonateIntent } from "../lib/analytic.js";
 
 /* ==========================================================================
    EDITABLE CONTENT — fill these in
@@ -143,7 +145,7 @@ function Reveal({
   );
 }
 
-function CopyField({ label, value }) {
+function CopyField({ label, value, intent = false }) {
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
@@ -151,9 +153,12 @@ function CopyField({ label, value }) {
       await navigator.clipboard.writeText(value);
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
+
+      // Only fires when the copy actually worked
+      trackEvent("copy_bank_detail", { field: label });
+      if (intent) trackDonateIntent("donate_bank_copy");
     } catch {
-      // Clipboard API unavailable — fail silently, the value is still
-      // visible on screen to copy manually.
+      // Clipboard API unavailable. The value is still visible to copy manually.
     }
   };
 
@@ -299,7 +304,11 @@ function HowToGive() {
             <p className="dn-how__text">
               Transfer directly using the details below.
             </p>
-            <CopyField label="Account Name" value={BANK_DETAILS.accountName} />
+            <CopyField
+              label="Account Name"
+              value={BANK_DETAILS.accountName}
+              intent
+            />
             <CopyField
               label="Account Number"
               value={BANK_DETAILS.accountNumber}
@@ -317,7 +326,14 @@ function HowToGive() {
                 <p className="dn-how__text">
                   Give securely online in a couple of taps.
                 </p>
-                <a href={ONLINE_PAYMENT_URL} className="dn-btn dn-btn--primary">
+                <a
+                  href={ONLINE_PAYMENT_URL}
+                  className="dn-btn dn-btn--primary"
+                  onClick={() => {
+                    trackCta("give_online", "donate");
+                    trackDonateIntent("donate_online");
+                  }}
+                >
                   <LuHeart aria-hidden="true" /> Give Online
                 </a>
               </>
@@ -327,7 +343,11 @@ function HowToGive() {
                   We&rsquo;re setting up secure online payment. For now, email
                   us and we&rsquo;ll help you give online.
                 </p>
-                <a href={DONATE_MAILTO} className="dn-btn dn-btn--outline">
+                <a
+                  href={DONATE_MAILTO}
+                  onClick={() => trackCta("ask_online_giving", "donate")}
+                  className="dn-btn dn-btn--outline"
+                >
                   <LuMail aria-hidden="true" /> Ask About Online Giving
                 </a>
               </>
@@ -343,7 +363,14 @@ function HowToGive() {
               Not sure what works best, or want to give in kind? Tell us and
               we&rsquo;ll figure it out together.
             </p>
-            <a href={DONATE_MAILTO} className="dn-btn dn-btn--outline">
+            <a
+              href={DONATE_MAILTO}
+              onClick={() => {
+                trackCta("email_to_donate", "donate");
+                trackDonateIntent("donate_email");
+              }}
+              className="dn-btn dn-btn--outline"
+            >
               <LuMail aria-hidden="true" /> Email Us To Donate
             </a>
           </Reveal>
@@ -376,6 +403,7 @@ function ConfirmDonation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    trackCta("confirm_donation_submit", "donate");
 
     const displayName =
       form.anonymous || !form.name.trim() ? "Anonymous" : form.name.trim();
@@ -566,12 +594,15 @@ function ClosingNote() {
    ========================================================================== */
 
 export default function Donate() {
-  useEffect(() => {
-    document.title = "Donate | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="dn-page">
+      <SEO
+        title="Donate | Sanusi Jafar Foundation"
+        description="Support Sanusi Jafar Foundation in restoring hope, dignity and belonging. Discover how to donate and help children, women, young people, and vulnerable families in underserved communities."
+        path="/donate"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <HowToGive />

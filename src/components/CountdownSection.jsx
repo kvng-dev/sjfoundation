@@ -104,7 +104,7 @@ export default function CountdownSection() {
           </div>
         ) : (
           <p className="cd-live">
-            Christmas on the Streets, Edition 4, is happening right now. 🎉
+            Christmas in the Street, Edition 4, is happening right now. 🎉
           </p>
         )}
 
@@ -153,4 +153,3 @@ const CSS = `
   .cd-grid { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 14px; }
 }
 `;
-

@@ -32,6 +32,7 @@ import { Doodle } from "../components/Doodles.jsx";
 // Reusing existing site photos as placeholders.
 import christmasPhoto from "../assets/DSC_8954.JPG";
 import smilesPhoto from "../assets/IMG_3127.JPG.jpeg";
+import SEO, { orgSchema } from "../components/seo.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT
@@ -297,12 +298,15 @@ function ClosingCta() {
    ========================================================================== */
 
 export default function OurWork() {
-  useEffect(() => {
-    document.title = "Our Work | Sanusi Jafar Foundation";
-  }, []);
-
   return (
     <div className="ow-page">
+      <SEO
+        title="Our Work | Sanusi Jafar Foundation"
+        description="Discover the work of Sanusi Jafar Foundation to restore hope, dignity and belonging through initiatives that support children, women, young people, and vulnerable families in underserved communities."
+        path="/our-work"
+        type="website"
+        jsonLd={orgSchema}
+      />
       <style>{CSS}</style>
       <Hero />
       <Teasers />
