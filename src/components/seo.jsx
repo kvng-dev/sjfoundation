@@ -5,10 +5,10 @@ import { useEffect } from "react";
 
 export const SITE = {
   name: "Sanusi Jafar Foundation",
-  url: "https://sanusijafarfoundation.org", // no trailing slash
-  logo: "https://sanusijafarfoundation.org/logo.png",
+  url: "https://www.sanusijafarfoundation.org", // no trailing slash
+  logo: "https://www.sanusijafarfoundation.org/logo.png",
   email: "info@sanusijafarfoundation.org",
-  defaultImage: "https://sanusijafarfoundation.org/og-default.jpg", // 1200x630
+  defaultImage: "https://www.sanusijafarfoundation.org/og-default.jpg", // 1200x630
   twitter: "", // optional, replace with a valid Twitter handle if available
   sameAs: [
     "https://www.instagram.com/sanusijafarfoundation",
