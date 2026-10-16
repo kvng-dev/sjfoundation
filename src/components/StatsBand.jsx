@@ -3,42 +3,20 @@ import { Doodle } from "./Doodles.jsx";
 import { heroStats } from "../data/content.js";
 
 function StatValue({ value }) {
-  const match = value.match(/^([\d,.]+)(.*)$/);
+  if (value == null || value === "") return "—";
 
-  if (!match) {
-    return value;
-  }
+  const text = String(value).trim();
+  const match = text.match(/^([\d,]+(?:\.\d+)?)(.*)$/);
+
+  if (!match) return text;
 
   const [, number, suffix] = match;
+  const end = Number(number.replace(/,/g, ""));
 
-  const numericValue = parseFloat(number.replace(/,/g, ""));
-  const hasDecimal = number.includes(".");
-  const hasK = suffix.toLowerCase().includes("k");
-
-  let end = numericValue;
-
-  // 1.2k → 1200
-  if (hasK) {
-    end = numericValue * 1000;
-  }
-
-  let decimals = 0;
-
-  if (hasDecimal) {
-    decimals = 1;
-  }
+  if (!Number.isFinite(end)) return text;
 
   return (
-    <CountUp
-      start={0}
-      end={end}
-      duration={4}
-      decimals={decimals}
-      separator=","
-      suffix={suffix}
-      enableScrollSpy
-      scrollSpyOnce
-    />
+    <CountUp start={0} end={end} duration={4} separator="," suffix={suffix} />
   );
 }
 

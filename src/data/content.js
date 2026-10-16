@@ -12,8 +12,8 @@ import {
 } from "react-icons/lu";
 
 import story1 from "../assets/IMG_3209.JPG.jpeg";
-import story2 from "../assets/IMG_3207.JPG.jpeg";
-import story3 from "../assets/IMG-20260707-WA0031.jpg";
+import story2 from "../assets/IMG-20260923-WA0092.jpg";
+import story3 from "../assets/IMG-20260923-WA0089.jpg";
 
 import planetLogo from "../assets/logos/planet.jpeg";
 import infusionLogo from "../assets/logos/infusion.png";
@@ -124,25 +124,25 @@ export const beneficiaryStories = [
 
 export const stories = [
   {
-    title: "A Brighter Tomorrow",
-    text: "How education is changing lives in our communities.",
+    title: "We Planned for 50. 150 Came.",
+    text: "What began with a target of 50 people grew into a gathering of 150 in Edition 1.",
     image: story1,
-    alt: "A smiling girl in a red top",
-    href: "/about",
+    alt: "Community members gathered during Christmas in the Street Edition 1",
+    href: "/christmas-in-the-street",
   },
   {
-    title: "Stronger Together",
-    text: "Support one mother, and a whole household grows stronger.",
+    title: "183 Women Went Home with Foodstuffs",
+    text: "In Edition 3, 183 women received foodstuffs as part of our community support initiative.",
     image: story2,
-    alt: "A mother and daughter smiling together",
+    alt: "Women receiving foodstuffs during Christmas in the Street Edition 3",
     href: "/impact",
   },
   {
-    title: "Building Opportunities",
-    text: "Youth development creates new possibilities.",
+    title: "A Visit to the Mosque",
+    text: "Edition 3 extended beyond the main event with a visit to the mosque, strengthening community connections.",
     image: story3,
-    alt: "A group of young people smiling in orange and yellow",
-    href: "/get-involved",
+    alt: "Community members during the mosque visit after Edition 3",
+    href: "/christmas-in-the-street",
   },
 ];
 

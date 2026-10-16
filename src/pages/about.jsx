@@ -24,7 +24,9 @@ import {
 } from "react-icons/lu";
 
 import heroPhoto from "../assets/IMG_3115.JPG.jpeg";
-import hoit from "../assets/kingsley.jpeg";
+import hoit from "../assets/kingsley.png";
+import jeff from "../assets/jeff.jpeg";
+import bayo from "../assets/bayo.jpeg";
 import story1 from "../assets/IMG_3139.JPG.jpeg";
 import story2 from "../assets/IMG_3124.JPG.jpeg";
 import story3 from "../assets/IMG_3123.JPG.jpeg";
@@ -250,35 +252,35 @@ function Doodle({ name, className = "", style, fill = "none" }) {
 
 const TRUSTEES = [
   {
-    name: "Kingsley Oghuanlan",
-    role: "Head of IT. Oversees technology, digital systems, and IT infrastructure.",
-    img: hoit,
-    tone: "peach",
-  },
-  {
-    name: "Jeff Arome",
-    role: "Community Mobilization Leader. Leads community engagement, outreach, and mobilization efforts.",
-    img: null,
+    name: "Arome Gabriel",
+    role: "Director of Impact and Evaluation.",
+    img: jeff,
     tone: "mint",
   },
   {
-    name: "Korede James",
-    role: "Operations Coordinator. Coordinates activities, supports team collaboration, and ensures smooth day-to-day operations.",
+    name: "Korede Olanrewaju",
+    role: "Multimedia Production Specialist",
     img: null,
     tone: "sky",
   },
   {
-    name: "Deji Banks",
-    role: "Head of Security. Oversees safety, security measures, and the protection of people and property.",
-    img: null,
+    name: "Adebayo Ajao",
+    role: "Youth Coach and Mentor",
+    img: bayo,
     tone: "blush",
+  },
+  {
+    name: "Kingsley Oghuanlan",
+    role: "Head of IT",
+    img: hoit,
+    tone: "peach",
   },
 ];
 
 const VOLUNTEERS = {
   src: team, // set to volunteersImg once imported
   alt: "The Sanusi Jafar Foundation volunteer team at a past edition",
-  caption: "Our volunteers, REPLACE: edition name and year",
+  caption: "Our volunteers, Edition 3 of Christmas in the Street, 2025",
 };
 
 /* ==========================================================================
