@@ -26,6 +26,7 @@ import {
 import heroPhoto from "../assets/IMG_3115.JPG.jpeg";
 import hoit from "../assets/kingsley.png";
 import jeff from "../assets/jeff.jpeg";
+import korede from "../assets/korede.jpeg";
 import bayo from "../assets/bayo.jpeg";
 import story1 from "../assets/IMG_3139.JPG.jpeg";
 import story2 from "../assets/IMG_3124.JPG.jpeg";
@@ -253,19 +254,19 @@ function Doodle({ name, className = "", style, fill = "none" }) {
 const TRUSTEES = [
   {
     name: "Arome Gabriel",
-    role: "Director of Impact and Evaluation.",
+    role: "Director of Impact and Evaluation",
     img: jeff,
     tone: "mint",
   },
   {
     name: "Korede Olanrewaju",
     role: "Multimedia Production Specialist",
-    img: null,
+    img: korede,
     tone: "sky",
   },
   {
     name: "Adebayo Ajao",
-    role: "Youth Coach and Mentor",
+    role: "Teen Coach and Mentor",
     img: bayo,
     tone: "blush",
   },
