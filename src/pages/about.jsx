@@ -1799,6 +1799,4 @@ const CSS = `
   .ab-badge b { font-size: 1.45rem; }
 }
 `;
-const WHO_WE_ARE_CSS = `
 
-`;

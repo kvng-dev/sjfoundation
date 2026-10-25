@@ -27,6 +27,7 @@ import hobLogo from "../assets/logos/hob.jpeg";
 import runalpha from "../assets/logos/runalpha.png";
 import sevenLogo from "../assets/logos/24Seven.png";
 import chiefolu from "../assets/logos/chiefolu.jpeg";
+import techarthon from "../assets/logos/techarthon.jpeg";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 // Nav links point at sections on the landing page for now.
@@ -162,6 +163,7 @@ export const partners = [
   { name: "RunAlpha", logo: runalpha },
   { name: "24seven", logo: sevenLogo },
   { name: "Chief Olu lawanson", logo: chiefolu },
+  { name: "Techarthon", logo: techarthon },
 ];
 
 export const footerLinks = [
