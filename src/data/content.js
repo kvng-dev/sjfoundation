@@ -44,7 +44,6 @@ export const navLinks = [
 export const heroStats = [
   { value: "1,354+", label: "Children Reached" },
   { value: "273+", label: "Women Reached" },
-  { value: "4", label: "Core areas of impact" },
   { value: "3", label: "Editions of Christmas in the Street" },
 ];
 

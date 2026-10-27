@@ -3,7 +3,7 @@ import Button from "./Button.jsx";
 import { Doodle } from "./Doodles.jsx";
 
 import heroImg1 from "../assets/IMG_3112.JPG.jpeg";
-import heroImg2 from "../assets/IMG_3125.JPG.jpeg";
+import heroImg2 from "../assets/santa-baby.jpeg";
 import heroImg3 from "../assets/IMG_3132.JPG.jpeg";
 import heroImg4 from "../assets/IMG_3119.JPG.jpeg";
 import heroImg5 from "../assets/IMG_3169.JPG.jpeg";

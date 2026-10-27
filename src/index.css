@@ -682,11 +682,12 @@ a {
 }
 .stats-band__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin: 0;
 }
 .stats-band__item {
   padding: 28px 24px;
+  text-align: center;
 }
 .stats-band__item:first-child {
   padding-left: 0;
