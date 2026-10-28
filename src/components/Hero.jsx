@@ -113,9 +113,10 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__copy">
+          <p className="hero__eyebrow eyebrow">Women &amp; Children Charity in Lagos</p>
           <h1 id="hero-title" className="hero__title">
-            Bringing hope, joy &amp; smiles to children, mothers &amp;
-            communities,{" "}
+            Bringing hope, joy, and smiles to children, mothers, and
+            communities in Lagos,{" "}
             <span className="lp-underline">
               <em>one life at a time.</em>
               <Doodle name="squiggle" />
@@ -124,12 +125,13 @@ export default function Hero() {
 
           <p className="hero__lead">
             We create lasting change through education, empowerment and
-            community support, helping families build brighter futures.
+            community support, helping women, children and families across Lagos
+            build brighter futures.
           </p>
 
           <div className="hero__actions">
             <Button href="/our-work" arrow>
-              Our Work
+              Explore Our Work
             </Button>
 
             <Button href="/get-involved" variant="outline">

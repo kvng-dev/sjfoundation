@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import { stories } from "../data/content.js";
 
@@ -10,9 +11,9 @@ export default function Stories() {
             <p className="eyebrow">Latest stories</p>
             <h2 className="h2">Real stories. Lasting impact.</h2>
           </div>
-          <a className="text-link" href="/about">
+          <Link className="text-link" to="/about">
             View All Stories <LuArrowRight aria-hidden="true" />
-          </a>
+          </Link>
         </div>
 
         <ul className="stories__grid">
@@ -28,9 +29,9 @@ export default function Stories() {
                 <div className="story-card__body">
                   <h3 className="story-card__title">{s.title}</h3>
                   <p>{s.text}</p>
-                  <a className="text-link" href={s.href}>
+                  <Link className="text-link" to={s.href}>
                     Read More <LuArrowRight aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
               </article>
             </li>

@@ -423,7 +423,9 @@ function Hero() {
 
       <div className="ab-wrap ab-hero__grid">
         <div className="ab-hero__copy">
-          <p className="ab-eyebrow">About us</p>
+          <p className="ab-eyebrow">
+            About us &middot; Women &amp; Children Charity in Lagos
+          </p>
           <h1 id="ab-hero-title" className="ab-h1">
             Every child deserves to feel{" "}
             <span className="ab-underlined">
@@ -432,8 +434,9 @@ function Hero() {
             </span>
           </h1>
           <p className="ab-lead">
-            At the Sanusi Jafar Foundation, we believe some of the most
-            important things we can give a person are not things at all.
+            At the Sanusi Jafar Foundation, a non-profit for women and children,
+            we believe some of the most important things we can give a person
+            are not things at all.
           </p>
 
           <p className="ab-they">They are</p>
@@ -673,14 +676,14 @@ function WideBand() {
 const FOCUS = [
   {
     title: "Child Welfare",
-    text: "Creating experiences, support and opportunities that help children feel seen, valued and able to dream.",
+    text: "Creating experiences, support and opportunities that help children in Lagos feel seen, valued and able to dream.",
     icon: LuBaby,
     tone: "peach",
     tilt: -1.5,
   },
   {
     title: "Women Empowerment",
-    text: "Supporting mothers and women in ways that strengthen households and create greater possibilities.",
+    text: "Supporting mothers and women across Lagos in ways that strengthen households and create greater possibilities.",
     icon: LuFlower2,
     tone: "mint",
     tilt: 1.2,
@@ -723,9 +726,9 @@ function WhyWeExist() {
           </h2>
           <p className="ab-lead ab-lead--dark">
             Today, the Sanusi Jafar Foundation is a grassroots non-profit
-            committed to restoring hope, dignity and belonging for children,
-            women, young people and vulnerable families in underserved
-            communities.
+            organisation in Lagos, committed to restoring hope, dignity and
+            belonging for children, women, young people and vulnerable families
+            in underserved communities.
           </p>
           <p className="ab-label">Our work focuses on:</p>
         </Reveal>
@@ -770,7 +773,22 @@ function WhyWeExist() {
             <p className="ab-p">
               We want to build relationships with communities, listen to their
               realities, understand their needs and create opportunities for
-              meaningful, lasting support.
+              meaningful, lasting support. See how this approach powers our
+              flagship outreach{" "}
+              <Link
+                to="/christmas-in-the-street"
+                style={{ color: "inherit", textDecoration: "underline" }}
+              >
+                Christmas in the Street
+              </Link>
+              , as well as the verified outcomes on our{" "}
+              <Link
+                to="/impact"
+                style={{ color: "inherit", textDecoration: "underline" }}
+              >
+                Impact page
+              </Link>
+              .
             </p>
             <p className="ab-p ab-p--big">
               Because helping a child is not only about the child.
@@ -835,7 +853,7 @@ function Essence() {
       <div className="ab-wrap">
         <Reveal className="ab-essence__head">
           <h2 id="ab-essence-title" className="ab-h2 ab-h2--xl">
-            SJF isn’t simply about distributing things.
+            The Sanusi Jafar Foundation is about more than giving.
           </h2>
           <p className="ab-label ab-label--center">It’s about:</p>
         </Reveal>
@@ -919,26 +937,36 @@ function MissionVision() {
             className="ab-abs ab-float ab-c-sun"
             style={{ top: 22, right: 24, width: 40 }}
           />
-          <p className="ab-mcard__label">Our mission</p>
+          <h2 className="ab-mcard__label">Our mission</h2>
           <p className="ab-mcard__big">
-            To restore hope, dignity and belonging one child, one family, one
+            To restore hope, dignity and belonging, one child, one family, one
             community at a time.
           </p>
           <p>
-            The Sanusi Jafar Foundation exists to create meaningful
-            opportunities and practical support for children, women, young
-            people and vulnerable families in underserved communities.
+            The Sanusi Jafar Foundation creates meaningful opportunities and
+            practical support for children, women, young people and vulnerable
+            families in underserved communities across Lagos.
           </p>
           <p>
-            Through community-led initiatives, partnerships and sustainable
-            programmes, we work to address immediate needs while creating
-            pathways to opportunity, connection and long-term wellbeing.
+            Through child welfare programmes, women empowerment initiatives,
+            youth development and community outreach, we meet immediate needs
+            while building pathways to opportunity, connection and long-term
+            wellbeing—in alignment with the{" "}
+            <a
+              href="https://sdgs.un.org/goals"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "inherit", textDecoration: "underline" }}
+            >
+              United Nations Sustainable Development Goals
+            </a>. Everything we do is community-led, rooted in partnerships
+            and designed to last.
           </p>
           <p className="ab-mcard__close">
             We believe impact is more than what we give.
           </p>
           <p>
-            It is how we make people feel, what possibilities we create, and
+            It is how we make people feel, what possibilities we open, and
             what changes because we showed up.
           </p>
         </Reveal>
@@ -950,22 +978,27 @@ function MissionVision() {
             className="ab-abs ab-float ab-c-sun"
             style={{ top: 22, right: 24, width: 40 }}
           />
-          <p className="ab-mcard__label">Our vision</p>
+          <h2 className="ab-mcard__label">Our vision</h2>
           <p className="ab-mcard__big">
             A future where every child feels seen, every mother feels supported,
-            every young person sees possibility, and every community knows that
-            it matters.
+            every young person sees possibility, and every community knows it
+            matters.
           </p>
           <p>
-            We envision communities where circumstances do not define potential,
-            where access to opportunity is not determined by where someone comes
-            from, and where no child feels that joy, belonging or possibility is
+            We envision communities where circumstances do not define potential
+            and where opportunity is never decided by where a person comes from.
+            No child should feel that joy, belonging, or possibility is
             reserved for someone else.
           </p>
           <p>
-            We want to help build communities where people are not simply
-            beneficiaries of support, but active participants in creating a
-            better future for themselves and those around them.
+            As a{" "}
+            <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>
+              Lagos-based NGO
+            </Link>{" "}
+            committed to grassroots change, we want to help build communities
+            where people are not simply beneficiaries of support, but active
+            partners in shaping a better future for themselves and those around
+            them.
           </p>
           <p className="ab-mcard__close">
             Because everyone deserves to feel that they belong.
@@ -1145,8 +1178,8 @@ function WhoWeAre() {
             Who we are
           </h2>
           <p className="ab-lead ab-lead--dark">
-            The Sanusi Jafar Foundation is guided by a board of trustees and
-            carried out in the community by volunteers.
+            The Sanusi Jafar Foundation is a Lagos-based NGO, guided by a board
+            of trustees and carried out in the community by volunteers.
           </p>
           <p className="ab-label">Our trustees</p>
         </Reveal>
@@ -1244,15 +1277,18 @@ function ProjectTeaser() {
 
         <div className="ab-project__text">
           <Reveal>
-            <p className="ab-eyebrow">From one memory to a bigger mission</p>
+            <p className="ab-eyebrow">Project 1,000 Smiles</p>
             <h2 id="ab-project-title" className="ab-h2">
+              From one memory to a bigger mission
+            </h2>
+            <p className="ab-p">
               Our next initiative, Project 1,000 Smiles, was born from this
               belief.
-            </h2>
+            </p>
             <p className="ab-p">
               It represents our commitment to move beyond one-off moments of
               generosity and build a more consistent, year-round connection with
-              the communities we serve.
+              the communities we serve in Lagos.
             </p>
           </Reveal>
           <Reveal className="ab-sticky ab-sticky--flat" delay={80}>
@@ -1438,8 +1474,8 @@ export default function About() {
   return (
     <div className="ab-page">
       <SEO
-        title="About Us | Sanusi Jafar Foundation"
-        description="Learn about Sanusi Jafar Foundation, our story, mission, vision, and commitment to restoring hope, dignity and belonging for children, women, young people, and vulnerable families in underserved communities."
+        title="About Sanusi Jafar Foundation | Women & Children Charity"
+        description="The story, founder and trustees behind Sanusi Jafar Foundation, a women and children charity in Lagos building hope, dignity and belonging."
         path="/about"
         type="website"
         jsonLd={orgSchema}

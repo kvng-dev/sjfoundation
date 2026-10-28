@@ -10,8 +10,10 @@ export default function Impact() {
           <p className="eyebrow">Our impact</p>
           <h2 className="h2">Real people. Real change.</h2>
           <p>
-            Through your support, we&rsquo;re creating opportunities, nurturing
-            hope in children and helping families and communities thrive.
+            Through your support, we&rsquo;re creating opportunities for women
+            and children across Lagos, nurturing hope and helping families and
+            communities thrive. So far, we&rsquo;ve reached 1,354+ children and
+            273+ women.
           </p>
           <Button href="/impact" variant="outline-orange" arrow>
             View Our Impact

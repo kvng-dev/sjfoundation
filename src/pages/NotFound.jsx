@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import { LuArrowRight, LuHeart } from "react-icons/lu";
 import { Doodle } from "../components/Doodles.jsx";
+import SEO from "../components/seo.jsx";
 
 export default function NotFound() {
   return (
     <section className="nf-section" aria-labelledby="nf-title">
+      <SEO
+        title="Page Not Found | Sanusi Jafar Foundation"
+        description="The page you are looking for does not exist on Sanusi Jafar Foundation."
+        path="/404"
+        noindex={true}
+      />
       <style>{CSS}</style>
 
       <Doodle

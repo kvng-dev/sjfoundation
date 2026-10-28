@@ -57,12 +57,12 @@ export const impactStats = [
 export const focusAreas = [
   {
     title: "Child Welfare",
-    text: "Creating safer, brighter futures for children.",
+    text: "Creating safer, brighter futures for children in Lagos.",
     icon: LuBaby,
   },
   {
     title: "Women Empowerment",
-    text: "Supporting mothers and women to build stronger households and communities.",
+    text: "Supporting women and mothers across Lagos to build stronger households and communities.",
     icon: LuFlower2,
   },
   {
@@ -80,22 +80,22 @@ export const focusAreas = [
 export const involveOptions = [
   {
     title: "Partner",
-    text: "Work with us to create meaningful impact.",
-    cta: "Learn More",
-    href: "/contact",
+    text: "Work with us to create meaningful impact for women and children in Lagos.",
+    cta: "Become a Partner",
+    href: "/get-involved",
     icon: LuHandshake,
   },
   {
     title: "Volunteer",
-    text: "Share your time, skills and compassion.",
-    cta: "Join Us",
+    text: "Share your time, skills, and compassion.",
+    cta: "Volunteer With Us",
     href: "/get-involved",
     icon: LuUsers,
   },
   {
     title: "Donate",
-    text: "Your support helps us reach more children, mothers and communities.",
-    cta: "Give Today",
+    text: "Your gift helps us reach more children, women and communities in Lagos.",
+    cta: "Donate Today",
     href: "/donate",
     icon: LuHeart,
   },

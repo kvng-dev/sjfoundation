@@ -32,6 +32,15 @@ export default function App() {
             path="/christmas-in-the-street"
             element={<ChristmasInTheStreet />}
           />
+          <Route
+            path="/christmas-in-the-streets"
+            element={<ChristmasInTheStreet />}
+          />
+          <Route
+            path="/christmas-on-the-streets"
+            element={<ChristmasInTheStreet />}
+          />
+          <Route path="/project1k" element={<Project1000Ssmiles />} />
           <Route path="/get-involved" element={<GetInvolvedPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />

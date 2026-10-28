@@ -415,7 +415,7 @@ export default function GetInvolved() {
     <div className="gi-page">
       <SEO
         title="Get Involved | Sanusi Jafar Foundation"
-        description="Get involved with Sanusi Jafar Foundation by volunteering, partnering with us, or donating to support children, women, young people, and vulnerable families in underserved communities."
+        description="Support a women and children charity in Lagos. Volunteer, partner with our foundation, or donate to help vulnerable children and families."
         path="/get-involved"
         type="website"
         jsonLd={orgSchema}

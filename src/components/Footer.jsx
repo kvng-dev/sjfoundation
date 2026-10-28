@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LuHeart, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import {
   FaFacebookF,
@@ -39,7 +40,7 @@ export default function Footer() {
           <ul>
             {footerLinks.map((l) => (
               <li key={l.label}>
-                <a href={l.href}>{l.label}</a>
+                <Link to={l.href}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -93,10 +94,10 @@ export default function Footer() {
 
         {/* Donate */}
         <div className="footer__cta">
-          <a href="/donate" className="btn btn--primary">
+          <Link to="/donate" className="btn btn--primary">
             <LuHeart aria-hidden="true" />
             Donate
-          </a>
+          </Link>
 
           <p>Because kindness changes lives.</p>
         </div>

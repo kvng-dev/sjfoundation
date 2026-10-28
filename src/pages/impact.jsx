@@ -21,8 +21,11 @@ import {
   LuArrowRight,
   LuBaby,
   LuFlower2,
-  LuHeart,
+  LuGift,
   LuHandshake,
+  LuHeart,
+  LuHeartPulse,
+  LuPackage,
   LuUsers,
 } from "react-icons/lu";
 import { Doodle } from "../components/Doodles.jsx";
@@ -151,13 +154,13 @@ function Hero() {
       <div className="im-wrap">
         <p className="im-eyebrow">Our impact</p>
         <h1 id="im-hero-title" className="im-h1">
-          Real people. Real change.{" "}
-          <span className="im-accent">Three years of it.</span>
+          Real people. Real change.
         </h1>
         <p className="im-lead">
           We measure impact the way it actually happens: one Christmas in the
-          Street at a time. Here&rsquo;s what three editions have added up to so
-          far.
+          Street at a time. Three editions of our annual charity outreach have
+          reached more than a thousand children and hundreds of women. Here is
+          what that looks like.
         </p>
       </div>
     </section>
@@ -252,6 +255,100 @@ function GrowthRecap() {
   );
 }
 
+function WhatEachDelivers() {
+  const DELIVERIES = [
+    {
+      icon: LuGift,
+      title: "Christmas joy for children",
+      text: (
+        <>
+          Gifts, celebration and the feeling of being included for children who
+          might otherwise watch from the outside, upholding child wellbeing
+          principles endorsed by{" "}
+          <a
+            href="https://www.unicef.org/nigeria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "inherit", textDecoration: "underline" }}
+          >
+            UNICEF
+          </a>
+          .
+        </>
+      ),
+    },
+    {
+      icon: LuHeartPulse,
+      title: "Basic health screenings for adults",
+      text: (
+        <>
+          Health checks for adults who may not otherwise have easy access to
+          them, aligned with preventative community health guidelines from the{" "}
+          <a
+            href="https://www.who.int/news-room/fact-sheets/detail/hypertension"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "inherit", textDecoration: "underline" }}
+          >
+            World Health Organization (WHO)
+          </a>
+          .
+        </>
+      ),
+    },
+    {
+      icon: LuPackage,
+      title: "Food supplies for widows and market women",
+      text: (
+        <>
+          Essential food supplies that ease the pressure on widows, market women
+          and mothers, advancing the mission of{" "}
+          <a
+            href="https://sdgs.un.org/goals/goal2"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "inherit", textDecoration: "underline" }}
+          >
+            UN SDG 2: Zero Hunger
+          </a>
+          .
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <section className="im-sec im-delivers" aria-labelledby="im-delivers-title">
+      <div className="im-wrap">
+        <Reveal>
+          <p className="im-eyebrow">What each edition delivers</p>
+          <h2 id="im-delivers-title" className="im-h2">
+            What each Christmas in the Street delivers
+          </h2>
+          <p className="im-lead">
+            Every December, our outreach in Lagos brings three kinds of support
+            to the community.
+          </p>
+        </Reveal>
+
+        <ul className="im-delivers__grid">
+          {DELIVERIES.map(({ icon: Icon, title, text }, i) => (
+            <li key={title}>
+              <Reveal delay={i * 80} className="im-delivers__card">
+                <span className="im-delivers__icon">
+                  <Icon aria-hidden="true" />
+                </span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function BeyondNumbers() {
   return (
     <section className="im-sec im-beyond" aria-labelledby="im-beyond-title">
@@ -271,31 +368,33 @@ function BeyondNumbers() {
         </Reveal>
 
         <Reveal delay={100}>
-          <p className="im-eyebrow">What the numbers don&rsquo;t show</p>
+          <p className="im-eyebrow">What the numbers don’t show</p>
           <h2 id="im-beyond-title" className="im-h2">
-            Impact is more than what we give.
+            Impact Is More Than What We Give
           </h2>
           <p className="im-p">
-            1,354 children is a number. A child finding out Santa remembered
-            them, even though there were 150 of them that first year;
-            that&rsquo;s not a number. That&rsquo;s a memory they&rsquo;ll keep.
+            Our first edition reached 150 children. Since then, that number has
+            grown to 1,354. Behind every number is a child who got to feel the
+            excitement of Christmas and know that someone cared enough to make
+            the day special.
           </p>
           <p className="im-p">
-            273 mothers, market women and widows is a number. One less month of
-            choosing between rent and rice. That&rsquo;s what the number is
-            actually made of.
+            273 widows, market women and mothers have received support through
+            our initiatives. Behind that number are women who have had a little
+            more help meeting their everyday needs and providing for their
+            families.
           </p>
           <p className="im-p">
-            And some of what we do was never going to show up in a count at all:
-            the people we met living in the streets who weren&rsquo;t on any
-            list, the 100 plus children at a mosque two days after Edition 3
-            ended, simply because the celebration didn&rsquo;t have to stop when
-            the event did.
+            Some of our impact never shows up in a count. It includes people we
+            met living on the streets who were on no list, and the 100+ children
+            we visited at a mosque two days after Edition 3 ended. As a women
+            and children charity in Lagos, we believe supporting vulnerable
+            children and women’s empowerment in Lagos goes beyond a single
+            event.
           </p>
           <p className="im-p im-p--quote">
-            We believe impact is more than what we give. It is how we make
-            people feel, what possibilities we create and what changes because
-            we showed up.
+            That is what impact means to us: how people feel, what becomes
+            possible, and what changes because we showed up.
           </p>
         </Reveal>
       </div>
@@ -304,14 +403,17 @@ function BeyondNumbers() {
 }
 
 const AHEAD_ITEMS = [
-  { icon: LuUsers, text: "Year-round reach, not one Saturday a year" },
   {
-    icon: LuFlower2,
-    text: "Continued support for mothers, market women & widows",
+    icon: LuArrowRight,
+    text: "Reach more people throughout the year, not just during a single event.",
   },
   {
-    icon: LuBaby,
-    text: "More children, more consistently, not just in December",
+    icon: LuArrowRight,
+    text: "Continue supporting mothers, market women, and widows.",
+  },
+  {
+    icon: LuArrowRight,
+    text: "Help more children through consistent support beyond the Christmas season.",
   },
 ];
 
@@ -330,14 +432,13 @@ function WhatsAhead() {
         </span>
 
         <Reveal>
-          <p className="im-eyebrow im-eyebrow--light">What&rsquo;s ahead</p>
+          <p className="im-eyebrow im-eyebrow--light">What’s ahead</p>
           <h2 id="im-ahead-title" className="im-h2 im-h2--light">
-            1,000 &mdash; our goal, not yet our number.
+            1,000 Smiles Is Our Goal
           </h2>
           <p className="im-ahead__lead">
-            Project 1,000 Smiles hasn&rsquo;t launched yet, so we won&rsquo;t
-            claim its impact before it's earned. Here&rsquo;s what it&rsquo;s
-            built to add once it does:
+            Project 1,000 Smiles has not launched yet, but we’re preparing to
+            extend our support to more people. Here’s what we hope to achieve:
           </p>
         </Reveal>
 
@@ -411,8 +512,8 @@ export default function Impact() {
   return (
     <div className="im-page">
       <SEO
-        title="Our Impact | Sanusi Jafar Foundation"
-        description="Explore the impact of Sanusi Jafar Foundation through our work supporting children, women, young people, and vulnerable families in underserved communities. Discover our progress, achievements, and future goals."
+        title="Our Impact | Women & Children Charity in Lagos"
+        description="See what our women and children charity in Lagos has achieved: 1,354+ children and 273+ women reached across three editions of Christmas in the Street."
         path="/impact"
         type="website"
         jsonLd={orgSchema}
@@ -421,6 +522,7 @@ export default function Impact() {
       <Hero />
       <HeadlineStats />
       <GrowthRecap />
+      <WhatEachDelivers />
       <BeyondNumbers />
       <WhatsAhead />
       <ClosingCta />
@@ -502,6 +604,18 @@ const CSS = `
 .im-recap__bar { display: flex; align-items: flex-start; justify-content: center; width: 100%; min-height: 30px; padding-top: 8px; background: linear-gradient(180deg, #f5a04a, var(--od)); border: 2px solid var(--ink); border-radius: 10px 10px 4px 4px; box-shadow: 2px 3px 0 var(--ink); color: #fff; font-family: var(--serif); font-weight: 700; font-size: 0.95rem; }
 .im-recap__bar--upcoming { align-items: center; height: 26%; background: repeating-linear-gradient(135deg, #fff 0 10px, #fff4ea 10px 20px); border-style: dashed; box-shadow: none; color: var(--oi); font-size: 1.2rem; }
 .im-recap__col p { margin-top: 10px; font-family: var(--serif); font-weight: 600; color: var(--ink); }
+
+/* ---- What each edition delivers ---- */
+.im-delivers { background: #faf8f5; border-bottom: 1px solid var(--line); overflow: hidden; }
+.im-delivers__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 28px); margin-top: 32px; }
+.im-delivers__card { height: 100%; padding: 28px 24px; background: #fff; border: 2px solid var(--ink); border-radius: 20px; box-shadow: 4px 6px 0 var(--sun); }
+.im-delivers__icon { display: grid; place-items: center; width: 50px; height: 50px; margin-bottom: 16px; background: var(--peach); border: 2px solid var(--ink); border-radius: 50%; color: var(--od); }
+.im-delivers__icon svg { width: 24px; height: 24px; }
+.im-delivers__card h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; line-height: 1.25; color: var(--ink); margin-bottom: 10px; }
+.im-delivers__card p { font-size: 0.95rem; line-height: 1.6; color: var(--body); margin: 0; }
+@media (max-width: 768px) {
+  .im-delivers__grid { grid-template-columns: 1fr; }
+}
 
 /* ---- Beyond numbers ---- */
 .im-beyond { background: #fcfcfa; overflow: hidden; }

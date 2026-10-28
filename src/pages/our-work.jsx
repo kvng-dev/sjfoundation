@@ -142,20 +142,17 @@ function Hero() {
         style={{ bottom: "16%", right: "6%", width: 28 }}
       />
       <div className="ow-wrap">
-        <p className="ow-eyebrow">Our work</p>
+        <p className="ow-eyebrow">
+          Our work &middot; Women &amp; Children Charity in Lagos
+        </p>
         <h1 id="ow-hero-title" className="ow-h1">
           This is how we show up.
         </h1>
         <p className="ow-lead">
-          {/* Right now, our work comes down to two things.{" "}
-          <strong>Christmas in the Street</strong> is the flagship day
-          we&rsquo;ve run for three years and counting.{" "}
-          <strong>Project 1,000 Smiles</strong> is the year-round commitment
-          we&rsquo;re building next. */}
-          Our work is centred on two complementary initiatives:{" "}
+          Our work as an NGO is centred on two complementary initiatives:{" "}
           <strong>Christmas in the Street</strong>, our flagship annual
           outreach, and <strong>Project 1,000 Smiles</strong>, our emerging
-          year-round commitment to creating lasting impact for children, mothers
+          year-round commitment to creating lasting impact for children, women
           and communities.
         </p>
       </div>
@@ -175,19 +172,19 @@ function Teasers() {
               loading="lazy"
             />
             <span className="ow-teaser__tag ow-teaser__tag--live">
-              Edition 4 · This December
+              Edition 4 &middot; 19 December 2026
             </span>
           </div>
           <div className="ow-teaser__body">
             <h2>Christmas in the Street</h2>
             <p>
-              An annual community outreach bringing Christmas joy to children,
-              basic health screenings to adults and essential food supplies to
-              widows, market women & mothers. Three editions down, with more
-              smiles to create every December.
+              An annual Christmas charity outreach in Lagos, bringing Christmas
+              joy to children, free basic health screenings to adults and
+              essential food supplies to widows, market women and mothers. Three
+              editions down, with more smiles to create every December.
             </p>
             <Link to={LINKS.christmas} className="ow-textlink">
-              Explore Christmas in the Street{" "}
+              Explore Christmas in the Street 2026{" "}
               <LuArrowRight aria-hidden="true" />
             </Link>
           </div>
@@ -208,13 +205,13 @@ function Teasers() {
           <div className="ow-teaser__body">
             <h2>Project 1,000 Smiles</h2>
             <p>
-              Not a bigger one-day event, a year-round way to reach children,
-              mothers and communities in the months between one December and the
-              next.
+              Project 1,000 Smiles carries the spirit of our annual Christmas
+              outreach into every month, so children, women, and communities
+              have someone showing up all year.
             </p>
-            <a href={LINKS.project} className="ow-textlink">
-              Explore Project 1,000 smiles <LuArrowRight aria-hidden="true" />
-            </a>
+            <Link to={LINKS.project} className="ow-textlink">
+              About Project 1,000 Smiles <LuArrowRight aria-hidden="true" />
+            </Link>
           </div>
         </Reveal>
       </div>
@@ -301,8 +298,8 @@ export default function OurWork() {
   return (
     <div className="ow-page">
       <SEO
-        title="Our Work | Sanusi Jafar Foundation"
-        description="Discover the work of Sanusi Jafar Foundation to restore hope, dignity and belonging through initiatives that support children, women, young people, and vulnerable families in underserved communities."
+        title="Our Work | Child Welfare & Women Empowerment, Lagos"
+        description="Explore the programmes of Sanusi Jafar Foundation: child welfare, women empowerment, youth development and community outreach for families in Lagos."
         path="/our-work"
         type="website"
         jsonLd={orgSchema}

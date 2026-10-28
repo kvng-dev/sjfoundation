@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Button.jsx";
 import { LuArrowRight } from "react-icons/lu";
 import { involveOptions } from "../data/content.js";
@@ -8,9 +9,10 @@ export default function GetInvolved() {
       <div className="container involve__grid">
         <div className="involve__copy">
           <p className="eyebrow">Get involved</p>
-          <h2 className="h2">Be part of the change.</h2>
+          <h2 className="h2">Be part of the change in Lagos.</h2>
           <p>
-            Your support helps us reach more children, mothers and communities.
+            Your support helps us reach more women, children, and communities
+            across Lagos.
           </p>
           <Button href="/get-involved" variant="outline-orange" arrow>
             Ways to Help
@@ -28,9 +30,9 @@ export default function GetInvolved() {
               <div>
                 <h3 className="involve__title">{title}</h3>
                 <p>{text}</p>
-                <a className="text-link" href={href}>
+                <Link className="text-link" to={href}>
                   {cta} <LuArrowRight aria-hidden="true" />
-                </a>
+                </Link>
               </div>
             </li>
           ))}

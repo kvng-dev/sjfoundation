@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import { Doodle } from "./Doodles.jsx";
 import projectImg from "../assets/IMG_3127.JPG.jpeg";
@@ -40,15 +41,14 @@ export default function FeaturedInitiative() {
           </h2>
           <p className="featured__sub">More than a number. A commitment.</p>
           <p className="featured__text">
-            Project 1,000 Smiles is a year round initiative we&rsquo;re
-            preparing to launch; built to carry the same hope and belonging we
-            bring every December into every month of the year, for children,
-            mothers and communities.
+            Project 1,000 Smiles is a year-round initiative we’re preparing to
+            launch for children, women, and communities in Lagos. It will carry
+            the hope and belonging we bring every December into every month of
+            the year.
           </p>
-          {/* Points at this section for now; swap to the dedicated page once it exists. */}
-          <a href="/project-1000-smiles" className="btn btn--white">
-            Learn More <LuArrowRight aria-hidden="true" />
-          </a>
+          <Link to="/project-1000-smiles" className="btn btn--white">
+            About Project 1,000 Smiles <LuArrowRight aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

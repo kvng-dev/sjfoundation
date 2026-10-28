@@ -63,17 +63,20 @@ export default function ChristmasFeature() {
         <div className="cf-content">
           <p className="cf-eyebrow">Our flagship initiative</p>
           <h2 id="cf-title" className="cf-title">
-            Christmas in the Street
+            Christmas in the Street:
+            <br />
+            Our Annual Christmas Outreach in Lagos
           </h2>
           <p className="cf-sub">
             3 editions. 1,354+ children reached. And counting.
           </p>
           <p className="cf-text">
-            Every December, Christmas in the Street brings joy to children,
-            provides basic health screenings for adults, and supports widows and
-            market women with essential food supplies. Now in its fourth
-            edition, we return on 19 December 2026 to share hope, dignity and
-            the joy of Christmas with our community.
+            Every December, Christmas in the Street brings joy to children
+            across Lagos, offers free basic health screenings for adults, and
+            provides essential food supplies for widows and market women. Now in
+            its fourth edition, this annual Christmas charity outreach returns
+            on 19 December 2026 to share hope, dignity, and the joy of Christmas
+            with families in our community.
           </p>
 
           {/* Compact countdown */}
@@ -97,7 +100,7 @@ export default function ChristmasFeature() {
           )}
 
           <Link to={LINK} className="cf-btn">
-            Explore Christmas In The Street <LuArrowRight aria-hidden="true" />
+            Explore Christmas in the Street <LuArrowRight aria-hidden="true" />
           </Link>
         </div>
       </div>

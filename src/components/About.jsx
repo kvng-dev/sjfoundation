@@ -12,14 +12,24 @@ export default function About() {
           <p className="eyebrow">Who we are</p>
           <h2 className="h2">More than a foundation. A movement for change.</h2>
           <p>
-            The Sanusi Jafar Foundation is a Lagos-based non-profit organisation
-            committed to restoring hope, dignity and belonging for children,
-            mothers and communities through sustainable programmes and strategic
-            partnerships.
+            The Sanusi Jafar Foundation is a Lagos-based charity and non-profit
+            organisation committed to restoring hope, dignity and belonging for
+            children, women and communities across Lagos through sustainable
+            programmes and strategic partnerships. Our work actively supports
+            the{" "}
+            <a
+              href="https://sdgs.un.org/goals"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--orange-ink)", textDecoration: "underline" }}
+            >
+              United Nations Sustainable Development Goals (UN SDGs)
+            </a>{" "}
+            for community empowerment and poverty alleviation.
           </p>
-          {/* Was an in-page anchor; now points at the real About Us page. */}
+          {/* Points at the real About Us page. */}
           <Link to="/about" className="btn btn--outline-orange">
-            Our Story <LuArrowRight aria-hidden="true" />
+            Read Our Story <LuArrowRight aria-hidden="true" />
           </Link>
         </div>
 
@@ -45,7 +55,7 @@ export default function About() {
             style={{ top: "-8%", right: "2%", width: 28 }}
           />
           <p className="eyebrow">Our focus</p>
-          <h2 className="h2">Where we make a difference.</h2>
+          <h2 className="h2">Where we make a difference in Lagos.</h2>
           <ul className="focus-grid">
             {focusAreas.map(({ title, text, icon: Icon }) => (
               <li className="focus-item" key={title}>
