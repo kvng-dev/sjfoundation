@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import ImpactPage from "./pages/impact.jsx";
 import GetInvolvedPage from "./pages/get-involved.jsx";
 import Contact from "./pages/contact.jsx";
@@ -15,7 +15,7 @@ import ConsentBanner from "./components/ConsentBanner.jsx";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       <RouteTracker />
       <ConsentBanner />
       <Routes>
@@ -47,6 +47,6 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }

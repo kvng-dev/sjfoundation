@@ -1,3 +1,25 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "redirects": [
+    {
+      "source": "/christmas-in-the-streets",
+      "destination": "/christmas-in-the-street",
+      "permanent": true
+    },
+    {
+      "source": "/christmas-on-the-streets",
+      "destination": "/christmas-in-the-street",
+      "permanent": true
+    },
+    {
+      "source": "/project1k",
+      "destination": "/project-1000-smiles",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

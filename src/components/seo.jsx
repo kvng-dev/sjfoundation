@@ -42,6 +42,12 @@ export default function SEO({
   noindex = false,
   jsonLd,
 }) {
+  // During prerender (no DOM), record the props so scripts/prerender.mjs can
+  // write real <title>/<meta>/canonical/JSON-LD tags into the static HTML.
+  if (typeof document === "undefined") {
+    globalThis.__SEO__ = { title, description, path, image, type, noindex, jsonLd };
+  }
+
   useEffect(() => {
     const url = SITE.url + path;
     document.title = title;

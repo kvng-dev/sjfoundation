@@ -11,10 +11,12 @@ export const openConsentBanner = () =>
   window.dispatchEvent(new Event(OPEN_EVENT));
 
 export default function ConsentBanner({ privacyHref }) {
-  // Lazy initialiser: no extra render, no flash of the banner for returning visitors
-  const [visible, setVisible] = useState(() => getConsent() === null);
+  // Start hidden so server-rendered HTML and the first client render match;
+  // show the banner after mount only if the visitor hasn't chosen yet.
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (getConsent() === null) setVisible(true);
     const reopen = () => setVisible(true);
     window.addEventListener(OPEN_EVENT, reopen);
     return () => window.removeEventListener(OPEN_EVENT, reopen);
