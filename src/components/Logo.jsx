@@ -6,7 +6,7 @@ export default function Logo({ light = false }) {
       <img
         className="logo__mark"
         src={logoMark}
-        alt=""
+        alt="Sanusi Jafar Foundation logo"
         width="58"
         height="45"
       />

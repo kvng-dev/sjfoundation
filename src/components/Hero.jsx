@@ -26,7 +26,13 @@ const heroImages = [
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [loaded, setLoaded] = useState(2); // how many slides are in the DOM
   const audioRef = useRef(null);
+
+  // Mount slides progressively (current + next) instead of fetching all 8 up front.
+  useEffect(() => {
+    setLoaded((n) => Math.max(n, Math.min(currentImage + 2, heroImages.length)));
+  }, [currentImage]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,11 +70,11 @@ export default function Hero() {
         autoPlay={true}
       />
       <div className="hero__media">
-        {heroImages.map((image, index) => (
+        {heroImages.slice(0, loaded).map((image, index) => (
           <img
             key={image}
             src={image}
-            alt="Children and families supported by the Sanusi Jafar Foundation"
+            alt={`Children and families supported by the Sanusi Jafar Foundation (photo ${index + 1})`}
             className={`hero__image ${
               index === currentImage ? "hero__image--active" : ""
             }`}
