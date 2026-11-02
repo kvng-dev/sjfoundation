@@ -25,13 +25,15 @@ const heroImages = [
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [loaded, setLoaded] = useState(2); // how many slides are in the DOM
   const audioRef = useRef(null);
 
   // Mount slides progressively (current + next) instead of fetching all 8 up front.
   useEffect(() => {
-    setLoaded((n) => Math.max(n, Math.min(currentImage + 2, heroImages.length)));
+    setLoaded((n) =>
+      Math.max(n, Math.min(currentImage + 2, heroImages.length))
+    );
   }, [currentImage]);
 
   useEffect(() => {
@@ -74,7 +76,9 @@ export default function Hero() {
           <img
             key={image}
             src={image}
-            alt={`Children and families supported by the Sanusi Jafar Foundation (photo ${index + 1})`}
+            alt={`Children and families supported by the Sanusi Jafar Foundation (photo ${
+              index + 1
+            })`}
             className={`hero__image ${
               index === currentImage ? "hero__image--active" : ""
             }`}
@@ -111,18 +115,39 @@ export default function Hero() {
           className={`hero__music ${isPlaying ? "hero__music--playing" : ""}`}
           onClick={toggleMusic}
           aria-label={isPlaying ? "Pause music" : "Play music"}
+          aria-pressed={isPlaying}
         >
-          {isPlaying ? "❚❚" : "▶"}
-          <span>{isPlaying ? "Pause music" : "Play music"}</span>
+          <span className="hero__music-icon" aria-hidden="true">
+            {isPlaying ? (
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="5" width="4" height="14" rx="1.2" />
+                <rect x="14" y="5" width="4" height="14" rx="1.2" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" />
+              </svg>
+            )}
+          </span>
+          <span className="hero__music-label">
+            {isPlaying ? "Pause music" : "Play music"}
+          </span>
+          <span className="hero__music-bars" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
         </button>
       </div>
 
       <div className="container hero__inner">
         <div className="hero__copy">
-          <p className="hero__eyebrow eyebrow">Women &amp; Children Charity in Lagos</p>
+          <p className="hero__eyebrow eyebrow">
+            Women &amp; Children Charity in Lagos
+          </p>
           <h1 id="hero-title" className="hero__title">
-            Bringing hope, joy, and smiles to children, mothers, and
-            communities in Lagos,{" "}
+            Bringing hope, joy, and smiles to children, mothers, and communities
+            in Lagos,{" "}
             <span className="lp-underline">
               <em>one life at a time.</em>
               <Doodle name="squiggle" />

@@ -38,6 +38,7 @@ import {
 import { Doodle } from "../components/Doodles.jsx";
 import SEO, { orgSchema } from "../components/seo.jsx";
 import { trackCta, trackDonateIntent } from "../lib/analytic.js";
+import PaystackGive, { PAYSTACK_ENABLED } from "../components/PaystackGive.jsx";
 
 /* ==========================================================================
    EDITABLE CONTENT — fill these in
@@ -321,7 +322,14 @@ function HowToGive() {
               <LuHeart aria-hidden="true" />
             </span>
             <h3>Online Giving</h3>
-            {ONLINE_PAYMENT_URL ? (
+            {PAYSTACK_ENABLED ? (
+              <>
+                <p className="dn-how__text">
+                  Give securely online with your card, bank transfer or USSD.
+                </p>
+                <PaystackGive causes={GIVE_WAYS.map((w) => w.title)} />
+              </>
+            ) : ONLINE_PAYMENT_URL ? (
               <>
                 <p className="dn-how__text">
                   Give securely online in a couple of taps.
@@ -719,6 +727,18 @@ const CSS = `
 
 .dn-formrow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
+.dn-pay { display: flex; flex-direction: column; gap: 12px; }
+.dn-pay__presets { display: flex; flex-wrap: wrap; gap: 8px; }
+.dn-pay__chip { padding: 7px 14px; border: 2px solid var(--ink); border-radius: 999px; background: #fff; color: var(--ink); font-family: var(--sans); font-size: 0.82rem; font-weight: 700; cursor: pointer; }
+.dn-pay__chip:hover { background: var(--sun); }
+.dn-pay__chip.is-on { background: var(--od); color: #fff; }
+.dn-pay .dn-btn { align-self: stretch; margin-top: 4px; }
+.dn-pay .dn-btn:disabled { opacity: 0.7; cursor: wait; }
+.dn-pay__error { color: #b3261e; font-size: 0.85rem; font-weight: 600; }
+.dn-pay__note { font-size: 0.75rem; opacity: 0.8; text-align: center; }
+.dn-pay__done { padding: 16px; background: #fff; border: 2px solid var(--ink); border-radius: 14px; }
+.dn-pay__done h4 { font-family: var(--serif); font-size: 1.15rem; margin-bottom: 6px; }
+.dn-pay__done p { font-size: 0.9rem; line-height: 1.5; overflow-wrap: anywhere; }
 .dn-amountinput { display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid var(--ink); border-radius: 12px; background: var(--cream); }
 .dn-amountinput span { font-weight: 700; color: var(--ink); }
 .dn-amountinput input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 11px 0; }

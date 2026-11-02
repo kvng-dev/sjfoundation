@@ -28,6 +28,7 @@ import runalpha from "../assets/logos/runalpha.png";
 import sevenLogo from "../assets/logos/24Seven.png";
 import chiefolu from "../assets/logos/chiefolu.jpeg";
 import techarthon from "../assets/logos/techarthon.jpeg";
+import skillz from "../assets/logos/skillz.jpeg";
 import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 // Nav links point at sections on the landing page for now.
@@ -163,6 +164,7 @@ export const partners = [
   { name: "24seven", logo: sevenLogo },
   { name: "Chief Olu lawanson", logo: chiefolu },
   { name: "Techarthon", logo: techarthon },
+  { name: "ConnectinSkillz", logo: skillz },
 ];
 
 export const footerLinks = [

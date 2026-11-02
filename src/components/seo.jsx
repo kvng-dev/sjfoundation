@@ -8,7 +8,7 @@ export const SITE = {
   url: "https://www.sanusijafarfoundation.org", // no trailing slash
   logo: "https://www.sanusijafarfoundation.org/logo.png",
   email: "info@sanusijafarfoundation.org",
-  defaultImage: "https://www.sanusijafarfoundation.org/og-default.jpg", // 1200x630
+  defaultImage: "https://www.sanusijafarfoundation.org/logo.png", // 1600x1227
   twitter: "", // optional, replace with a valid Twitter handle if available
   sameAs: [
     "https://www.instagram.com/sanusijafarfoundation",
@@ -66,8 +66,8 @@ export default function SEO({
     prop("og:url", url);
     prop("og:image", image);
     prop("og:image:alt", title);
-    prop("og:image:width", "1200");
-    prop("og:image:height", "630");
+    prop("og:image:width", "1600");
+    prop("og:image:height", "1227");
     prop("og:locale", "en_NG");
 
     meta("twitter:card", "summary_large_image");
