@@ -25,7 +25,7 @@ const heroImages = [
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [loaded, setLoaded] = useState(2); // how many slides are in the DOM
   const audioRef = useRef(null);
 
