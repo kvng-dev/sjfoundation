@@ -44,6 +44,29 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
+
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        setIsPlaying(false);
+      });
+    }
+
+    return () => {
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
+    };
+  }, []);
+
   // Play / pause music
   const toggleMusic = async () => {
     if (!audioRef.current) return;
@@ -109,7 +132,7 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Music Button */}
+        {/* Music button */}
         <button
           type="button"
           className={`hero__music ${isPlaying ? "hero__music--playing" : ""}`}

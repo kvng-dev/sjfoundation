@@ -347,6 +347,9 @@ a {
   background: var(--orange);
   border-radius: 2px;
 }
+.nav__item-donate-mobile {
+  display: none;
+}
 .nav__donate-mobile {
   display: none;
 }
@@ -369,13 +372,10 @@ a {
 @media (max-width: 1120px) {
   .header__toggle {
     display: inline-grid;
-    margin-left: 10px;
+    margin-left: auto;
   }
   .header__donate {
-    display: inline-flex;
-    margin-left: auto; /* pushes donate + toggle to the right */
-    padding: 8px 14px;
-    font-size: 0.85rem;
+    display: none;
   }
   .nav {
     position: absolute;
@@ -406,19 +406,23 @@ a {
   .nav__link.is-active::after {
     display: none;
   }
+  .nav__item-donate-mobile {
+    display: block;
+    padding-top: 16px;
+  }
   .nav__donate-mobile {
-    display: none;
-    /* margin-top: 18px; */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    gap: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Very small phones: shrink it so the logo doesn't get squeezed */
   .header__donate {
-    padding: 9px;
-    border-radius: 50%;
-  }
-  .header__donate-text {
     display: none;
   }
 }
@@ -508,7 +512,7 @@ a {
   position: absolute;
   right: 25px;
   bottom: 25px;
-  z-index: 10;
+  z-index: 20;
 
   display: flex;
   align-items: center;
@@ -750,6 +754,69 @@ a {
     min-height: 0;
     padding-block: 40px 8px;
   }
+  .hero__dots {
+    bottom: 20px;
+    left: 18px;
+    transform: none;
+  }
+  .hero__music {
+    position: absolute;
+    right: 18px;
+    bottom: 16px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 6px;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    background: var(--orange-btn);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(5, 36, 54, 0.4);
+  }
+  .hero__music-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .hero__music-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__dots {
+    bottom: 18px;
+    left: 14px;
+    gap: 6px;
+  }
+  .hero__dot {
+    width: 7px;
+    height: 7px;
+  }
+  .hero__dot--active {
+    width: 18px;
+  }
+  .hero__music {
+    right: 14px;
+    bottom: 14px;
+    padding: 4px 10px 4px 4px;
+    font-size: 0.76rem;
+    gap: 6px;
+  }
+  .hero__music-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .hero__music-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+  .hero__music-bars {
+    display: none;
+  }
 }
 
 /* ---------- Stats band ---------- */
@@ -803,15 +870,6 @@ a {
   }
   .stats-band__item:nth-child(n + 3) {
     border-top: 1px solid var(--line);
-  }
-  .hero__music {
-    right: 15px;
-    bottom: 55px;
-    padding: 9px 13px;
-  }
-
-  .hero__music span {
-    display: none;
   }
 }
 
@@ -1106,7 +1164,7 @@ a {
   padding: 1rem 0;
   list-style: none;
 
-  animation: partners-scroll 25s linear infinite;
+  animation: partners-scroll 40s linear infinite;
 }
 
 .partners__item {

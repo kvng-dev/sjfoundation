@@ -37,16 +37,17 @@ export default function Header() {
                 </NavLink>
               </li>
             ))}
+            <li className="nav__item-donate-mobile">
+              <Link
+                to="/donate"
+                className="btn btn--primary btn--sm nav__donate-mobile"
+                onClick={close}
+              >
+                <LuHeart aria-hidden="true" />
+                Donate
+              </Link>
+            </li>
           </ul>
-
-          <Link
-            to="/donate"
-            className="btn btn--primary btn--sm nav__donate-mobile"
-            onClick={close}
-          >
-            <LuHeart aria-hidden="true" />
-            Donate
-          </Link>
         </nav>
 
         <Link to="/donate" className="btn btn--primary btn--sm header__donate">
