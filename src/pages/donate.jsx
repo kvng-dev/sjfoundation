@@ -54,6 +54,30 @@ const BANK_DETAILS = {
   bankName: "Providus Bank",
 };
 
+const USD_BANK_DETAILS = {
+  currency: "USD",
+  accountType: "DOMICILIARY ACCOUNT",
+  intermediaryBank: "FIRNZAJJ",
+  intermediaryBankName: "FIRSTRAND BANK",
+  beneficiaryBankSwift: "62854143915",
+  swiftCode: "UMPLNGLA",
+  beneficiaryBankName: "Providus Bank",
+  beneficiaryAccount: "1311451077",
+  beneficiaryName: "Sanusi Jafar Foundation",
+  beneficiaryAddress: "14 OmoAsejere Street off Alhaji, Ogudu, Lagos, Nigeria",
+};
+
+const USD_WIRE_TEXT = `USD DOMICILIARY ACCOUNT
+Intermediary Bank: FIRNZAJJ
+Intermediary Bank Name: FIRSTRAND BANK
+Beneficiary Bank Swift: 62854143915
+Code: UMPLNGLA
+
+Beneficiary Bank Name: Providus Bank
+Beneficiary Account: 1311451077
+Beneficiary Name: Sanusi Jafar Foundation
+Beneficiary Address: 14 OmoAsejere Street off Alhaji, Ogudu, Lagos, Nigeria`;
+
 // Set this once you have a real payment link (Paystack/Flutterwave/etc.).
 // While it's null, the Online Giving card points people to email you instead.
 const ONLINE_PAYMENT_URL = null;
@@ -286,6 +310,23 @@ function WaysToGive() {
 }
 
 function HowToGive() {
+  const [bankTab, setBankTab] = useState(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#usd") {
+      return "usd";
+    }
+    return "ngn";
+  });
+  const [copiedAll, setCopiedAll] = useState(false);
+
+  const copyAllUsd = async () => {
+    try {
+      await navigator.clipboard.writeText(USD_WIRE_TEXT);
+      setCopiedAll(true);
+      setTimeout(() => setCopiedAll(false), 2000);
+      trackDonateIntent("donate_usd_copy_all");
+    } catch {}
+  };
+
   return (
     <section className="dn-sec dn-how" aria-labelledby="dn-how-title">
       <div className="dn-wrap">
@@ -303,18 +344,106 @@ function HowToGive() {
             </span>
             <h3>Bank Transfer</h3>
             <p className="dn-how__text">
-              Transfer directly using the details below.
+              Transfer directly using our Nigerian Naira or USD Domiciliary
+              account.
             </p>
-            <CopyField
-              label="Account Name"
-              value={BANK_DETAILS.accountName}
-              intent
-            />
-            <CopyField
-              label="Account Number"
-              value={BANK_DETAILS.accountNumber}
-            />
-            <CopyField label="Bank" value={BANK_DETAILS.bankName} />
+
+            <div
+              className="dn-currency-tabs"
+              role="tablist"
+              aria-label="Select currency account"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={bankTab === "ngn"}
+                className={`dn-currency-tab ${
+                  bankTab === "ngn" ? "is-active" : ""
+                }`}
+                onClick={() => setBankTab("ngn")}
+              >
+                NGN (Naira)
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={bankTab === "usd"}
+                className={`dn-currency-tab ${
+                  bankTab === "usd" ? "is-active" : ""
+                }`}
+                onClick={() => setBankTab("usd")}
+              >
+                USD (Domiciliary)
+              </button>
+            </div>
+
+            {bankTab === "ngn" ? (
+              <div className="dn-bank-fields">
+                <CopyField
+                  label="Account Name"
+                  value={BANK_DETAILS.accountName}
+                  intent
+                />
+                <CopyField
+                  label="Account Number"
+                  value={BANK_DETAILS.accountNumber}
+                />
+                <CopyField label="Bank" value={BANK_DETAILS.bankName} />
+              </div>
+            ) : (
+              <div className="dn-bank-fields">
+                <div className="dn-badge-usd">USD Domiciliary Account</div>
+                <CopyField
+                  label="Beneficiary Account"
+                  value={USD_BANK_DETAILS.beneficiaryAccount}
+                  intent
+                />
+                <CopyField
+                  label="Beneficiary Name"
+                  value={USD_BANK_DETAILS.beneficiaryName}
+                />
+                <CopyField
+                  label="Beneficiary Bank Name"
+                  value={USD_BANK_DETAILS.beneficiaryBankName}
+                />
+                <CopyField
+                  label="Code (SWIFT / BIC)"
+                  value={USD_BANK_DETAILS.swiftCode}
+                />
+                <CopyField
+                  label="Beneficiary Bank Swift"
+                  value={USD_BANK_DETAILS.beneficiaryBankSwift}
+                />
+                <CopyField
+                  label="Intermediary Bank"
+                  value={USD_BANK_DETAILS.intermediaryBank}
+                />
+                <CopyField
+                  label="Intermediary Bank Name"
+                  value={USD_BANK_DETAILS.intermediaryBankName}
+                />
+                <CopyField
+                  label="Beneficiary Address"
+                  value={USD_BANK_DETAILS.beneficiaryAddress}
+                />
+
+                <button
+                  type="button"
+                  className="dn-btn dn-btn--outline dn-btn--copy-all"
+                  onClick={copyAllUsd}
+                >
+                  {copiedAll ? (
+                    <>
+                      <LuCheck aria-hidden="true" /> Copied Wire Instructions
+                    </>
+                  ) : (
+                    <>
+                      <LuCopy aria-hidden="true" /> Copy All USD Details
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
           </Reveal>
 
           <Reveal delay={90} className="dn-how__card">
@@ -392,6 +521,7 @@ function ConfirmDonation() {
   const [form, setForm] = useState({
     name: "",
     anonymous: false,
+    currency: "NGN",
     amount: "",
     date: "",
     cause: GIVE_WAYS[0].title,
@@ -416,13 +546,16 @@ function ConfirmDonation() {
     const displayName =
       form.anonymous || !form.name.trim() ? "Anonymous" : form.name.trim();
 
+    const currencySymbol = form.currency === "USD" ? "$" : "\u20a6";
     const lines = [
       "Hi Sanusi Jafar Foundation,",
       "",
       "I just made a bank transfer and wanted to let you know:",
       "",
       `Name: ${displayName}`,
-      `Amount: \u20a6${form.amount || "[not specified]"}`,
+      `Amount: ${currencySymbol}${form.amount || "[not specified]"} (${
+        form.currency
+      })`,
       form.date ? `Date of transfer: ${form.date}` : null,
       `What it's for: ${form.cause}`,
       !form.anonymous && form.email
@@ -484,7 +617,16 @@ function ConfirmDonation() {
               <div className="dn-formfield">
                 <label htmlFor="dn-amount">Amount transferred *</label>
                 <div className="dn-amountinput">
-                  <span aria-hidden="true">&#8358;</span>
+                  <select
+                    name="currency"
+                    value={form.currency}
+                    onChange={handleChange}
+                    className="dn-currency-select"
+                    aria-label="Currency"
+                  >
+                    <option value="NGN">₦ (NGN)</option>
+                    <option value="USD">$ (USD)</option>
+                  </select>
                   <input
                     id="dn-amount"
                     name="amount"
@@ -703,6 +845,77 @@ const CSS = `
 .dn-field__copy { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border: 0; border-radius: 50%; background: var(--peach); color: var(--od); cursor: pointer; }
 .dn-field__copy svg { width: 15px; height: 15px; }
 .dn-field__copy:hover { background: var(--sun); }
+
+.dn-currency-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+  background: rgba(11, 34, 51, 0.06);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+}
+.dn-currency-tab {
+  flex: 1;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+.dn-currency-tab:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.dn-currency-tab.is-active {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(11, 34, 51, 0.2);
+}
+.dn-badge-usd {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--oi);
+}
+.dn-btn--copy-all {
+  width: 100%;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  padding: 0.7rem 1.2rem;
+}
+.dn-currency-select {
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+  padding-right: 4px;
+}
+.dn-currency-select:focus {
+  outline: none;
+}
+.dn-bank-fields {
+  display: flex;
+  flex-direction: column;
+}
 
 /* ---- Confirm donation form ---- */
 .dn-confirm { background: #eef8f2; }
